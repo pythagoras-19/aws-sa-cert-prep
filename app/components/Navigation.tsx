@@ -13,7 +13,8 @@ import {
   FileText, 
   Brain, 
   Home,
-  Database
+  Database,
+  Network
 } from 'lucide-react'
 
 const navigationItems = [
@@ -21,6 +22,8 @@ const navigationItems = [
   { name: 'Core Concepts', href: '/concepts', icon: BookOpen },
   { name: 'EC2 Reference', href: '/reference/ec2', icon: Server },
   { name: 'S3 Reference', href: '/reference/s3', icon: Database },
+  { name: 'VPC Reference', href: '/reference/vpc', icon: Network },
+  { name: 'RDS Reference', href: '/reference/rds', icon: Database },
   { name: 'Q&A', href: '/qa', icon: HelpCircle },
   { name: 'Flashcards', href: '/flashcards', icon: CreditCard },
   { name: 'Practice Exams', href: '/exams', icon: FileText },

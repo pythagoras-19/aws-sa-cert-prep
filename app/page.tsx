@@ -157,6 +157,10 @@ export default function Home() {
                     handleFeatureClick('/reference/ec2')
                   } else if (service.name === 'S3') {
                     handleFeatureClick('/reference/s3')
+                  } else if (service.name === 'VPC') {
+                    handleFeatureClick('/reference/vpc')
+                  } else if (service.name === 'RDS') {
+                    handleFeatureClick('/reference/rds')
                   }
                 }}
               >
