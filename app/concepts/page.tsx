@@ -13,7 +13,8 @@ import {
   ChevronRight,
   ExternalLink,
   BookOpen,
-  Play
+  Play,
+  HelpCircle
 } from 'lucide-react'
 
 const serviceCategories = [
