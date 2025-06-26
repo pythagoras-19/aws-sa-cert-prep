@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 import { 
   BookOpen, 
   HelpCircle, 
@@ -24,6 +25,13 @@ const features = [
     description: 'Learn fundamental AWS services and architectural patterns',
     href: '/concepts',
     color: 'from-blue-500 to-blue-600'
+  },
+  {
+    icon: Server,
+    title: 'EC2 Reference',
+    description: 'Comprehensive guide to Amazon Elastic Compute Cloud',
+    href: '/reference/ec2',
+    color: 'from-orange-500 to-red-500'
   },
   {
     icon: HelpCircle,
@@ -73,6 +81,11 @@ const awsServices = [
 
 export default function Home() {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null)
+  const router = useRouter()
+
+  const handleFeatureClick = (href: string) => {
+    router.push(href)
+  }
 
   return (
     <div className="min-h-screen">
@@ -96,10 +109,16 @@ export default function Home() {
               with our comprehensive learning platform.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="btn-secondary text-lg px-8 py-3">
+              <button 
+                className="btn-secondary text-lg px-8 py-3"
+                onClick={() => handleFeatureClick('/concepts')}
+              >
                 Start Learning
               </button>
-              <button className="bg-white text-aws-orange font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors">
+              <button 
+                className="bg-white text-aws-orange font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors"
+                onClick={() => handleFeatureClick('/exams')}
+              >
                 Take Practice Exam
               </button>
             </div>
@@ -132,7 +151,12 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center group"
+                className="text-center group cursor-pointer"
+                onClick={() => {
+                  if (service.name === 'EC2') {
+                    handleFeatureClick('/reference/ec2')
+                  }
+                }}
               >
                 <div className={`w-16 h-16 mx-auto mb-3 rounded-lg flex items-center justify-center ${service.color} group-hover:scale-110 transition-transform`}>
                   <service.icon className="w-8 h-8" />
@@ -171,6 +195,7 @@ export default function Home() {
                 onHoverStart={() => setHoveredFeature(index)}
                 onHoverEnd={() => setHoveredFeature(null)}
                 className="group cursor-pointer"
+                onClick={() => handleFeatureClick(feature.href)}
               >
                 <div className="card h-full relative overflow-hidden">
                   <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${feature.color} opacity-10 rounded-bl-full transition-opacity duration-300 group-hover:opacity-20`} />
@@ -246,7 +271,10 @@ export default function Home() {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Join thousands of learners who have successfully passed the AWS Solutions Architect Associate exam.
             </p>
-            <button className="btn-primary text-lg px-8 py-3">
+            <button 
+              className="btn-primary text-lg px-8 py-3"
+              onClick={() => handleFeatureClick('/concepts')}
+            >
               Get Started Now
             </button>
           </motion.div>
