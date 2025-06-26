@@ -12,13 +12,15 @@ import {
   CreditCard, 
   FileText, 
   Brain, 
-  Home
+  Home,
+  Database
 } from 'lucide-react'
 
 const navigationItems = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Core Concepts', href: '/concepts', icon: BookOpen },
   { name: 'EC2 Reference', href: '/reference/ec2', icon: Server },
+  { name: 'S3 Reference', href: '/reference/s3', icon: Database },
   { name: 'Q&A', href: '/qa', icon: HelpCircle },
   { name: 'Flashcards', href: '/flashcards', icon: CreditCard },
   { name: 'Practice Exams', href: '/exams', icon: FileText },

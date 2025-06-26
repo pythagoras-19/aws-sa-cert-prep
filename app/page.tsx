@@ -155,6 +155,8 @@ export default function Home() {
                 onClick={() => {
                   if (service.name === 'EC2') {
                     handleFeatureClick('/reference/ec2')
+                  } else if (service.name === 'S3') {
+                    handleFeatureClick('/reference/s3')
                   }
                 }}
               >

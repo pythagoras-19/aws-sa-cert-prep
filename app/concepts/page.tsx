@@ -14,7 +14,8 @@ import {
   ExternalLink,
   BookOpen,
   Play,
-  HelpCircle
+  HelpCircle,
+  CreditCard
 } from 'lucide-react'
 
 const serviceCategories = [
