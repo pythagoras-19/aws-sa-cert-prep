@@ -566,157 +566,409 @@ const ec2Questions = [
   },
   {
     id: 40,
-    question: "What is the purpose of an EBS volume lifecycle manager?",
+    question: "What is the purpose of a DB Instance Class?",
     options: [
-      "To automatically backup volumes",
-      "To automatically delete old snapshots",
-      "To automatically resize volumes",
-      "To automatically migrate volumes"
+      "To group multiple databases together",
+      "To define the compute and memory capacity",
+      "To control network access",
+      "To manage backup storage"
     ],
     correctAnswer: 1,
-    explanation: "EBS lifecycle manager automatically deletes old snapshots based on policies you define. This helps you manage snapshot costs and storage by removing snapshots that are no longer needed.",
-    category: "Storage",
-    difficulty: "Medium"
+    explanation: "DB Instance Classes define the compute and memory capacity of your RDS instance. Different classes are optimized for different workloads.",
+    category: "Database",
+    difficulty: "Easy"
   },
   {
     id: 41,
-    question: "Which instance type is best for a database server?",
+    question: "What is the purpose of Storage Auto Scaling?",
     options: [
-      "T3 instances (burstable)",
-      "M6i instances (general purpose)",
-      "R6i instances (memory optimized)",
-      "I3 instances (storage optimized)"
+      "To automatically scale compute resources",
+      "To automatically scale storage capacity",
+      "To automatically backup the database",
+      "To automatically encrypt the database"
     ],
-    correctAnswer: 2,
-    explanation: "R6i instances are optimized for memory-intensive workloads like databases. They provide high memory-to-vCPU ratios and are ideal for applications that need large amounts of memory for caching and data processing.",
-    category: "Instance Types",
+    correctAnswer: 1,
+    explanation: "Storage Auto Scaling automatically increases storage capacity when needed, up to the maximum storage limit, without manual intervention.",
+    category: "Storage",
     difficulty: "Medium"
   },
   {
     id: 42,
-    question: "What is the purpose of an EBS volume encryption by default?",
+    question: "What is the purpose of a VPC in RDS?",
     options: [
-      "To reduce costs",
-      "To increase performance",
-      "To encrypt all new volumes automatically",
-      "To compress data"
+      "To encrypt the database",
+      "To provide network isolation and security",
+      "To backup the database",
+      "To scale the database"
     ],
-    correctAnswer: 2,
-    explanation: "EBS encryption by default automatically encrypts all new EBS volumes and snapshots. This provides an additional layer of security without requiring manual configuration for each volume.",
-    category: "Security",
+    correctAnswer: 1,
+    explanation: "RDS instances run in VPCs to provide network isolation and security. VPCs allow you to control network access and security groups.",
+    category: "Networking",
     difficulty: "Medium"
   },
   {
     id: 43,
-    question: "Which instance type is best for a high-performance computing workload?",
+    question: "What is the purpose of a DB Subnet Group?",
     options: [
-      "T3 instances (burstable)",
-      "M6i instances (general purpose)",
-      "C6i instances (compute optimized)",
-      "R6i instances (memory optimized)"
+      "To group multiple databases together",
+      "To specify which subnets can be used for RDS instances",
+      "To control network access",
+      "To manage backup storage"
     ],
-    correctAnswer: 2,
-    explanation: "C6i instances are optimized for compute-intensive workloads like high-performance computing. They provide high CPU performance and are cost-effective for applications that need to process large amounts of data.",
-    category: "Instance Types",
+    correctAnswer: 1,
+    explanation: "A DB Subnet Group specifies which VPC subnets can be used for RDS instances. It must include subnets in at least two Availability Zones for Multi-AZ deployment.",
+    category: "Networking",
     difficulty: "Medium"
   },
   {
     id: 44,
-    question: "What is the purpose of an EBS volume snapshot archive?",
+    question: "What is the purpose of a DB Parameter Group?",
     options: [
-      "To compress snapshots",
-      "To store snapshots in cheaper storage",
-      "To encrypt snapshots",
-      "To migrate snapshots"
+      "To group multiple databases together",
+      "To control database engine configuration parameters",
+      "To control network access",
+      "To manage backup storage"
     ],
     correctAnswer: 1,
-    explanation: "EBS snapshot archive stores snapshots in cheaper storage for long-term retention. It's useful for compliance requirements or when you need to keep snapshots for extended periods.",
-    category: "Storage",
-    difficulty: "Hard"
+    explanation: "DB Parameter Groups allow you to control database engine configuration parameters for security, performance, and compatibility settings.",
+    category: "Database",
+    difficulty: "Medium"
   },
   {
     id: 45,
-    question: "Which instance type is best for a caching server?",
+    question: "What is the purpose of a DB Option Group?",
     options: [
-      "T3 instances (burstable)",
-      "M6i instances (general purpose)",
-      "R6i instances (memory optimized)",
-      "I3 instances (storage optimized)"
+      "To group multiple databases together",
+      "To configure database engine-specific options",
+      "To control network access",
+      "To manage backup storage"
     ],
-    correctAnswer: 2,
-    explanation: "R6i instances are optimized for memory-intensive workloads like caching servers. They provide high memory-to-vCPU ratios and are ideal for applications that need large amounts of memory for caching data.",
-    category: "Instance Types",
-    difficulty: "Medium"
+    correctAnswer: 1,
+    explanation: "DB Option Groups allow you to configure database engine-specific options, such as Oracle Enterprise Manager or SQL Server Native Web Services.",
+    category: "Database",
+    difficulty: "Hard"
   },
   {
     id: 46,
-    question: "What is the purpose of an EBS volume snapshot copy?",
+    question: "What is the purpose of a DB Cluster?",
     options: [
-      "To create a backup",
-      "To copy snapshots between regions",
-      "To increase snapshot size",
-      "To encrypt snapshots"
+      "To group multiple databases together",
+      "To provide high availability for Aurora databases",
+      "To control network access",
+      "To manage backup storage"
     ],
     correctAnswer: 1,
-    explanation: "EBS snapshot copy allows you to copy snapshots between AWS regions. This is useful for disaster recovery, compliance requirements, or when you need to launch instances in different regions.",
-    category: "Storage",
-    difficulty: "Medium"
+    explanation: "DB Clusters are used with Aurora databases to provide high availability and scalability. They consist of a primary instance and read replicas.",
+    category: "Database",
+    difficulty: "Hard"
   },
   {
     id: 47,
-    question: "Which instance type is best for a load balancer?",
+    question: "What is the purpose of a DB Cluster Parameter Group?",
     options: [
-      "T3 instances (burstable)",
-      "M6i instances (general purpose)",
-      "C6i instances (compute optimized)",
-      "R6i instances (memory optimized)"
+      "To group multiple databases together",
+      "To control cluster-level configuration parameters",
+      "To control network access",
+      "To manage backup storage"
     ],
     correctAnswer: 1,
-    explanation: "M6i instances provide a good balance of compute, memory, and networking resources, making them ideal for load balancers. They can handle variable workloads and provide consistent performance.",
-    category: "Instance Types",
-    difficulty: "Medium"
+    explanation: "DB Cluster Parameter Groups control cluster-level configuration parameters for Aurora databases, affecting all instances in the cluster.",
+    category: "Database",
+    difficulty: "Hard"
   },
   {
     id: 48,
-    question: "What is the purpose of an EBS volume snapshot import?",
+    question: "What is the purpose of a DB Cluster Snapshot?",
     options: [
-      "To import snapshots from S3",
-      "To import snapshots from other regions",
-      "To import snapshots from other AWS accounts",
-      "To import snapshots from on-premises"
+      "To backup individual database instances",
+      "To backup the entire cluster",
+      "To control network access",
+      "To manage backup storage"
     ],
-    correctAnswer: 0,
-    explanation: "EBS snapshot import allows you to import snapshots from S3. This is useful for migrating data from on-premises environments or other cloud providers to AWS.",
-    category: "Storage",
+    correctAnswer: 1,
+    explanation: "DB Cluster Snapshots backup the entire Aurora cluster, including all instances and data. They are used for disaster recovery and migration.",
+    category: "Backup",
     difficulty: "Hard"
   },
   {
     id: 49,
-    question: "Which instance type is best for a monitoring server?",
+    question: "What is the purpose of a DB Instance Snapshot?",
     options: [
-      "T3 instances (burstable)",
-      "M6i instances (general purpose)",
-      "C6i instances (compute optimized)",
-      "R6i instances (memory optimized)"
+      "To backup the entire cluster",
+      "To backup individual database instances",
+      "To control network access",
+      "To manage backup storage"
     ],
     correctAnswer: 1,
-    explanation: "M6i instances provide a good balance of compute, memory, and networking resources, making them ideal for monitoring servers. They can handle variable workloads and provide consistent performance.",
-    category: "Instance Types",
-    difficulty: "Easy"
+    explanation: "DB Instance Snapshots backup individual database instances. They can be used to restore or copy individual instances.",
+    category: "Backup",
+    difficulty: "Medium"
   },
   {
     id: 50,
-    question: "What is the purpose of an EBS volume snapshot export?",
+    question: "What is the purpose of a DB Snapshot Copy?",
     options: [
-      "To export snapshots to S3",
-      "To export snapshots to other regions",
-      "To export snapshots to other AWS accounts",
-      "To export snapshots to on-premises"
+      "To backup the database",
+      "To copy snapshots to other regions",
+      "To control network access",
+      "To manage backup storage"
     ],
-    correctAnswer: 0,
-    explanation: "EBS snapshot export allows you to export snapshots to S3. This is useful for backing up data, migrating data to other cloud providers, or for compliance requirements.",
-    category: "Storage",
+    correctAnswer: 1,
+    explanation: "DB Snapshot Copy allows you to copy snapshots to other regions for disaster recovery, migration, or compliance requirements.",
+    category: "Backup",
+    difficulty: "Medium"
+  },
+  {
+    id: 51,
+    question: "What is the purpose of a DB Snapshot Export?",
+    options: [
+      "To backup the database",
+      "To export snapshots to S3 for analysis",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Snapshot Export allows you to export snapshots to S3 in Parquet format for analysis using services like Amazon Athena or Amazon Redshift Spectrum.",
+    category: "Backup",
     difficulty: "Hard"
+  },
+  {
+    id: 52,
+    question: "What is the purpose of a DB Snapshot Import?",
+    options: [
+      "To backup the database",
+      "To import data from external sources",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Snapshot Import allows you to import data from external sources, such as S3, into your RDS database.",
+    category: "Database",
+    difficulty: "Hard"
+  },
+  {
+    id: 53,
+    question: "What is the purpose of a DB Instance Reboot?",
+    options: [
+      "To backup the database",
+      "To apply parameter group changes",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Reboot is required to apply certain parameter group changes. It can be done with or without failover in Multi-AZ deployments.",
+    category: "Database",
+    difficulty: "Medium"
+  },
+  {
+    id: 54,
+    question: "What is the purpose of a DB Instance Modify?",
+    options: [
+      "To backup the database",
+      "To change instance configuration",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Modify allows you to change instance configuration, such as instance class, storage, or parameter groups.",
+    category: "Database",
+    difficulty: "Easy"
+  },
+  {
+    id: 55,
+    question: "What is the purpose of a DB Instance Delete?",
+    options: [
+      "To backup the database",
+      "To terminate the database instance",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Delete terminates the database instance. You can choose to create a final snapshot before deletion.",
+    category: "Database",
+    difficulty: "Easy"
+  },
+  {
+    id: 56,
+    question: "What is the purpose of a DB Instance Restore?",
+    options: [
+      "To backup the database",
+      "To restore from a snapshot or point-in-time",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Restore allows you to restore from a snapshot or point-in-time backup to create a new database instance.",
+    category: "Backup",
+    difficulty: "Medium"
+  },
+  {
+    id: 57,
+    question: "What is the purpose of a DB Instance Copy?",
+    options: [
+      "To backup the database",
+      "To create a copy of the database instance",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Copy creates a copy of the database instance, which can be useful for testing, development, or migration purposes.",
+    category: "Database",
+    difficulty: "Medium"
+  },
+  {
+    id: 58,
+    question: "What is the purpose of a DB Instance Promote?",
+    options: [
+      "To backup the database",
+      "To promote a read replica to primary",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Promote promotes a read replica to become the primary instance. This breaks the replication relationship.",
+    category: "Database",
+    difficulty: "Hard"
+  },
+  {
+    id: 59,
+    question: "What is the purpose of a DB Instance Reboot with Failover?",
+    options: [
+      "To backup the database",
+      "To reboot with automatic failover in Multi-AZ",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Reboot with Failover reboots the primary instance and automatically fails over to the standby instance in Multi-AZ deployments.",
+    category: "Database",
+    difficulty: "Medium"
+  },
+  {
+    id: 60,
+    question: "What is the purpose of a DB Instance Reboot without Failover?",
+    options: [
+      "To backup the database",
+      "To reboot without automatic failover",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Reboot without Failover reboots the primary instance without failing over to the standby instance in Multi-AZ deployments.",
+    category: "Database",
+    difficulty: "Medium"
+  },
+  {
+    id: 61,
+    question: "What is the purpose of a DB Instance Stop?",
+    options: [
+      "To backup the database",
+      "To stop the database instance",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Stop stops the database instance to save costs. The instance can be started again later.",
+    category: "Database",
+    difficulty: "Easy"
+  },
+  {
+    id: 62,
+    question: "What is the purpose of a DB Instance Start?",
+    options: [
+      "To backup the database",
+      "To start a stopped database instance",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Start starts a previously stopped database instance. The instance becomes available for connections.",
+    category: "Database",
+    difficulty: "Easy"
+  },
+  {
+    id: 63,
+    question: "What is the purpose of a DB Instance Upgrade?",
+    options: [
+      "To backup the database",
+      "To upgrade the database engine version",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Upgrade upgrades the database engine version. This can be done during a maintenance window.",
+    category: "Database",
+    difficulty: "Medium"
+  },
+  {
+    id: 64,
+    question: "What is the purpose of a DB Instance Downgrade?",
+    options: [
+      "To backup the database",
+      "To downgrade the database engine version",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Downgrade downgrades the database engine version. This is not always supported and may require a restore from backup.",
+    category: "Database",
+    difficulty: "Hard"
+  },
+  {
+    id: 65,
+    question: "What is the purpose of a DB Instance Rename?",
+    options: [
+      "To backup the database",
+      "To change the database instance name",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Rename changes the database instance name. This is a cosmetic change that doesn't affect the database functionality.",
+    category: "Database",
+    difficulty: "Easy"
+  },
+  {
+    id: 66,
+    question: "What is the purpose of a DB Instance Tag?",
+    options: [
+      "To backup the database",
+      "To add metadata to the database instance",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Tags add metadata to the database instance for organization, cost allocation, and resource management.",
+    category: "Database",
+    difficulty: "Easy"
+  },
+  {
+    id: 67,
+    question: "What is the purpose of a DB Instance Monitoring?",
+    options: [
+      "To backup the database",
+      "To monitor database performance and health",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Monitoring tracks database performance and health using CloudWatch metrics and Performance Insights.",
+    category: "Performance",
+    difficulty: "Medium"
+  },
+  {
+    id: 68,
+    question: "What is the purpose of a DB Instance Logging?",
+    options: [
+      "To backup the database",
+      "To enable database engine logs",
+      "To control network access",
+      "To manage backup storage"
+    ],
+    correctAnswer: 1,
+    explanation: "DB Instance Logging enables database engine logs for troubleshooting, auditing, and compliance purposes.",
+    category: "Database",
+    difficulty: "Medium"
   }
 ]
 
@@ -2829,12 +3081,295 @@ const rdsQuestions = [
   }
 ]
 
-const allQuestions = [...ec2Questions, ...s3Questions, ...vpcQuestions, ...rdsQuestions]
+const lambdaQuestions = [
+  {
+    id: 201,
+    question: "What is AWS Lambda?",
+    options: [
+      "A serverless compute service that runs code in response to events",
+      "A virtual machine service like EC2",
+      "A container orchestration service",
+      "A database service"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Lambda is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources. You only pay for the compute time you consume.",
+    category: "Overview",
+    difficulty: "Easy"
+  },
+  {
+    id: 202,
+    question: "What is a cold start in Lambda?",
+    options: [
+      "When a function is terminated due to inactivity",
+      "When a new execution environment is created for a function",
+      "When a function runs out of memory",
+      "When a function times out"
+    ],
+    correctAnswer: 1,
+    explanation: "A cold start occurs when AWS Lambda creates a new execution environment for your function. This happens when there are no existing environments available or when the function hasn't been invoked recently.",
+    category: "Performance",
+    difficulty: "Medium"
+  },
+  {
+    id: 203,
+    question: "What is the maximum execution time for a Lambda function?",
+    options: [
+      "5 minutes",
+      "10 minutes",
+      "15 minutes",
+      "30 minutes"
+    ],
+    correctAnswer: 2,
+    explanation: "The maximum execution time (timeout) for a Lambda function is 15 minutes (900 seconds). The default timeout is 3 seconds.",
+    category: "Configuration",
+    difficulty: "Easy"
+  },
+  {
+    id: 204,
+    question: "What is the maximum memory allocation for a Lambda function?",
+    options: [
+      "1,024 MB",
+      "5,120 MB",
+      "10,240 MB",
+      "15,360 MB"
+    ],
+    correctAnswer: 2,
+    explanation: "Lambda functions can be allocated between 128 MB and 10,240 MB of memory. More memory also means more CPU power, as Lambda allocates CPU proportionally to memory.",
+    category: "Configuration",
+    difficulty: "Easy"
+  },
+  {
+    id: 205,
+    question: "What is Provisioned Concurrency in Lambda?",
+    options: [
+      "A way to reserve memory for your function",
+      "A way to pre-warm execution environments",
+      "A way to increase the timeout",
+      "A way to reduce cold starts"
+    ],
+    correctAnswer: 1,
+    explanation: "Provisioned Concurrency keeps a specified number of execution environments initialized and ready to respond immediately to your function's invocations. This eliminates cold starts but costs more than on-demand execution.",
+    category: "Performance",
+    difficulty: "Medium"
+  },
+  {
+    id: 206,
+    question: "What is an Event Source Mapping in Lambda?",
+    options: [
+      "A way to map environment variables",
+      "A way to connect Lambda to stream-based data sources",
+      "A way to map function versions",
+      "A way to map IAM roles"
+    ],
+    correctAnswer: 1,
+    explanation: "Event Source Mappings allow Lambda to poll for records from stream-based data sources like Kinesis, DynamoDB Streams, and SQS. Lambda automatically polls for new records and invokes your function.",
+    category: "Integration",
+    difficulty: "Medium"
+  },
+  {
+    id: 207,
+    question: "What is a Dead Letter Queue (DLQ) in Lambda?",
+    options: [
+      "A queue for storing function logs",
+      "A queue for storing failed function executions",
+      "A queue for storing function metrics",
+      "A queue for storing function configurations"
+    ],
+    correctAnswer: 1,
+    explanation: "A Dead Letter Queue (DLQ) is an SQS queue or SNS topic that receives failed function executions. This allows you to handle and analyze failures without losing data.",
+    category: "Error Handling",
+    difficulty: "Medium"
+  },
+  {
+    id: 208,
+    question: "What is the maximum size of a Lambda deployment package?",
+    options: [
+      "50 MB zipped, 250 MB unzipped",
+      "100 MB zipped, 500 MB unzipped",
+      "250 MB zipped, 500 MB unzipped",
+      "500 MB zipped, 1 GB unzipped"
+    ],
+    correctAnswer: 0,
+    explanation: "For direct upload, Lambda deployment packages are limited to 50 MB zipped and 250 MB unzipped. For uploads via S3, the limit is 250 MB zipped and 500 MB unzipped.",
+    category: "Deployment",
+    difficulty: "Medium"
+  },
+  {
+    id: 209,
+    question: "What is the purpose of Lambda Layers?",
+    options: [
+      "To organize function code",
+      "To share code and dependencies across functions",
+      "To separate function versions",
+      "To manage function permissions"
+    ],
+    correctAnswer: 1,
+    explanation: "Lambda Layers allow you to share code and dependencies across multiple functions. You can use layers to manage your function's dependencies separately from your function code.",
+    category: "Deployment",
+    difficulty: "Medium"
+  },
+  {
+    id: 210,
+    question: "What is the maximum number of layers per Lambda function?",
+    options: [
+      "3 layers",
+      "5 layers",
+      "10 layers",
+      "Unlimited"
+    ],
+    correctAnswer: 1,
+    explanation: "You can use up to 5 layers per Lambda function. Each layer can be up to 250 MB in size.",
+    category: "Deployment",
+    difficulty: "Easy"
+  },
+  {
+    id: 211,
+    question: "What is the default timeout for a Lambda function?",
+    options: [
+      "1 second",
+      "3 seconds",
+      "5 seconds",
+      "10 seconds"
+    ],
+    correctAnswer: 1,
+    explanation: "The default timeout for a Lambda function is 3 seconds. You can configure this up to the maximum of 15 minutes.",
+    category: "Configuration",
+    difficulty: "Easy"
+  },
+  {
+    id: 212,
+    question: "What is the maximum payload size for synchronous Lambda invocations?",
+    options: [
+      "1 MB",
+      "6 MB",
+      "10 MB",
+      "50 MB"
+    ],
+    correctAnswer: 1,
+    explanation: "The maximum payload size for synchronous Lambda invocations is 6 MB. For asynchronous invocations, the limit is 256 KB.",
+    category: "Configuration",
+    difficulty: "Medium"
+  },
+  {
+    id: 213,
+    question: "What is the purpose of environment variables in Lambda?",
+    options: [
+      "To store function code",
+      "To store configuration data",
+      "To store function logs",
+      "To store function metrics"
+    ],
+    correctAnswer: 1,
+    explanation: "Environment variables allow you to store configuration data outside of your function code. This makes your function more flexible and easier to manage across different environments.",
+    category: "Configuration",
+    difficulty: "Easy"
+  },
+  {
+    id: 214,
+    question: "What is the maximum size of environment variables in Lambda?",
+    options: [
+      "1 KB total",
+      "4 KB total",
+      "10 KB total",
+      "Unlimited"
+    ],
+    correctAnswer: 1,
+    explanation: "The total size of all environment variables for a Lambda function cannot exceed 4 KB.",
+    category: "Configuration",
+    difficulty: "Medium"
+  },
+  {
+    id: 215,
+    question: "What is the purpose of Lambda function versions?",
+    options: [
+      "To organize function code",
+      "To create immutable copies of your function",
+      "To manage function permissions",
+      "To store function logs"
+    ],
+    correctAnswer: 1,
+    explanation: "Lambda function versions create immutable copies of your function code and configuration. This allows you to maintain different versions of your function and roll back if needed.",
+    category: "Deployment",
+    difficulty: "Medium"
+  },
+  {
+    id: 216,
+    question: "What is the purpose of Lambda aliases?",
+    options: [
+      "To organize function code",
+      "To create pointers to function versions",
+      "To manage function permissions",
+      "To store function logs"
+    ],
+    correctAnswer: 1,
+    explanation: "Lambda aliases are pointers to function versions. They allow you to easily switch between different versions of your function and implement blue-green deployments.",
+    category: "Deployment",
+    difficulty: "Medium"
+  },
+  {
+    id: 217,
+    question: "What is the maximum number of concurrent executions for Lambda?",
+    options: [
+      "500 per region",
+      "1,000 per region",
+      "5,000 per region",
+      "Unlimited"
+    ],
+    correctAnswer: 1,
+    explanation: "By default, Lambda allows 1,000 concurrent executions per region. You can request an increase through AWS Support if you need more.",
+    category: "Limits",
+    difficulty: "Medium"
+  },
+  {
+    id: 218,
+    question: "What is the purpose of Lambda function tags?",
+    options: [
+      "To organize function code",
+      "To categorize and organize functions",
+      "To manage function permissions",
+      "To store function logs"
+    ],
+    correctAnswer: 1,
+    explanation: "Lambda function tags allow you to categorize and organize your functions. You can use tags for cost allocation, resource organization, and access control.",
+    category: "Management",
+    difficulty: "Easy"
+  },
+  {
+    id: 219,
+    question: "What is the purpose of Lambda function tracing?",
+    options: [
+      "To track function costs",
+      "To trace function execution and performance",
+      "To track function logs",
+      "To track function metrics"
+    ],
+    correctAnswer: 1,
+    explanation: "Lambda function tracing allows you to trace function execution and performance using AWS X-Ray. This helps you identify performance bottlenecks and debug issues.",
+    category: "Performance",
+    difficulty: "Medium"
+  },
+  {
+    id: 220,
+    question: "What is the purpose of Lambda function monitoring?",
+    options: [
+      "To monitor function costs",
+      "To monitor function performance and health",
+      "To monitor function logs",
+      "To monitor function permissions"
+    ],
+    correctAnswer: 1,
+    explanation: "Lambda function monitoring provides metrics and logs to help you monitor function performance and health. You can use CloudWatch to view these metrics and logs.",
+    category: "Performance",
+    difficulty: "Easy"
+  }
+]
 
-const categories = ['All', 'Instance Types', 'Pricing', 'Storage', 'Security', 'Networking', 'Auto Scaling', 'Instance Management', 'Storage Classes', 'Management', 'Performance', 'Integration', 'Billing']
+const allQuestions = [...ec2Questions, ...s3Questions, ...vpcQuestions, ...rdsQuestions, ...lambdaQuestions]
+
+const categories = ['All', 'Instance Types', 'Pricing', 'Storage', 'Security', 'Networking', 'Auto Scaling', 'Instance Management', 'Storage Classes', 'Management', 'Performance', 'Integration', 'Billing', 'Overview', 'Configuration', 'Error Handling', 'Deployment', 'Limits']
 const difficulties = ['All', 'Easy', 'Medium', 'Hard']
 
-const services = ['All', 'EC2', 'S3', 'VPC', 'RDS']
+const services = ['All', 'EC2', 'S3', 'VPC', 'RDS', 'Lambda']
 
 export default function QAPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -2899,9 +3434,11 @@ export default function QAPage() {
       } else if (selectedService === 'S3') {
         filtered = filtered.filter(q => q.id > 50 && q.id <= 100)
       } else if (selectedService === 'VPC') {
-        filtered = filtered.filter(q => q.id > 100)
+        filtered = filtered.filter(q => q.id > 100 && q.id <= 150)
       } else if (selectedService === 'RDS') {
-        filtered = filtered.filter(q => q.id > 150)
+        filtered = filtered.filter(q => q.id > 150 && q.id <= 200)
+      } else if (selectedService === 'Lambda') {
+        filtered = filtered.filter(q => q.id > 200 && q.id <= 220)
       }
     }
 
@@ -2942,10 +3479,10 @@ export default function QAPage() {
               </h1>
             </div>
             <p className="text-xl max-w-3xl mx-auto">
-              Test your knowledge with interactive questions covering EC2, S3, VPC, and RDS concepts
+              Test your knowledge with interactive questions covering EC2, S3, VPC, RDS, and Lambda concepts
             </p>
             <div className="flex justify-center space-x-4 text-sm text-gray-500">
-              <span>📚 200 Questions</span>
+              <span>📚 220 Questions</span>
               <span>🎯 Multiple Choice</span>
               <span>📊 Progress Tracking</span>
             </div>

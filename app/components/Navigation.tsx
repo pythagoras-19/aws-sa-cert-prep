@@ -14,7 +14,8 @@ import {
   Brain, 
   Home,
   Database,
-  Network
+  Network,
+  Zap
 } from 'lucide-react'
 
 const navigationItems = [
@@ -24,6 +25,7 @@ const navigationItems = [
   { name: 'S3 Reference', href: '/reference/s3', icon: Database },
   { name: 'VPC Reference', href: '/reference/vpc', icon: Network },
   { name: 'RDS Reference', href: '/reference/rds', icon: Database },
+  { name: 'Lambda Reference', href: '/reference/lambda', icon: Zap },
   { name: 'Q&A', href: '/qa', icon: HelpCircle },
   { name: 'Flashcards', href: '/flashcards', icon: CreditCard },
   { name: 'Practice Exams', href: '/exams', icon: FileText },
