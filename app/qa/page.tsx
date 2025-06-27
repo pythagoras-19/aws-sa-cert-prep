@@ -3364,12 +3364,295 @@ const lambdaQuestions = [
   }
 ]
 
-const allQuestions = [...ec2Questions, ...s3Questions, ...vpcQuestions, ...rdsQuestions, ...lambdaQuestions]
+const route53Questions = [
+  {
+    id: 221,
+    question: "What is Amazon Route 53?",
+    options: [
+      "A load balancer service",
+      "A highly available and scalable DNS web service",
+      "A content delivery network",
+      "A database service"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. It's designed to give developers and businesses an extremely reliable and cost-effective way to route end users to Internet applications.",
+    category: "Overview",
+    difficulty: "Easy"
+  },
+  {
+    id: 222,
+    question: "What is the difference between an A record and a CNAME record?",
+    options: [
+      "A records point to IP addresses, CNAME records point to domain names",
+      "A records are free, CNAME records cost money",
+      "A records support health checks, CNAME records don't",
+      "There is no difference"
+    ],
+    correctAnswer: 0,
+    explanation: "A records point directly to IPv4 addresses (e.g., 192.168.1.1), while CNAME records point to domain names (e.g., www.example.com). A records are used for the root domain and subdomains, while CNAME records cannot be used for the root domain.",
+    category: "Record Types",
+    difficulty: "Medium"
+  },
+  {
+    id: 223,
+    question: "What is an Alias record in Route 53?",
+    options: [
+      "A type of CNAME record",
+      "A record that can point to AWS resources and is free",
+      "A record that points to external domains",
+      "A record used for email routing"
+    ],
+    correctAnswer: 1,
+    explanation: "Alias records are Route 53-specific records that can point to AWS resources like S3 buckets, CloudFront distributions, and Application Load Balancers. They are free and provide better performance than CNAME records.",
+    category: "Record Types",
+    difficulty: "Medium"
+  },
+  {
+    id: 224,
+    question: "What is the purpose of a TTL (Time To Live) in DNS records?",
+    options: [
+      "To encrypt DNS queries",
+      "To specify how long DNS resolvers should cache the record",
+      "To determine the cost of DNS queries",
+      "To set the health check interval"
+    ],
+    correctAnswer: 1,
+    explanation: "TTL (Time To Live) specifies how long DNS resolvers should cache the record before querying the authoritative DNS server again. Lower TTL values allow faster DNS propagation but increase query costs.",
+    category: "Configuration",
+    difficulty: "Medium"
+  },
+  {
+    id: 225,
+    question: "Which routing policy routes traffic to a single resource?",
+    options: [
+      "Weighted Routing",
+      "Simple Routing",
+      "Latency-Based Routing",
+      "Failover Routing"
+    ],
+    correctAnswer: 1,
+    explanation: "Simple Routing routes traffic to a single resource. It's the most basic routing policy and doesn't provide failover or load balancing capabilities.",
+    category: "Routing Policies",
+    difficulty: "Easy"
+  },
+  {
+    id: 226,
+    question: "What is Weighted Routing used for?",
+    options: [
+      "To route traffic based on geographic location",
+      "To route traffic based on assigned weights for A/B testing",
+      "To route traffic to the closest region",
+      "To route traffic to backup resources"
+    ],
+    correctAnswer: 1,
+    explanation: "Weighted Routing routes traffic based on assigned weights. It's commonly used for A/B testing, gradual rollouts, and testing new versions of applications.",
+    category: "Routing Policies",
+    difficulty: "Medium"
+  },
+  {
+    id: 227,
+    question: "Which routing policy routes traffic to the region with the lowest latency?",
+    options: [
+      "Geolocation Routing",
+      "Latency-Based Routing",
+      "Geoproximity Routing",
+      "Multi-Value Answer Routing"
+    ],
+    correctAnswer: 1,
+    explanation: "Latency-Based Routing routes traffic to the region with the lowest latency from the user's location. It's ideal for global applications that need optimal performance.",
+    category: "Routing Policies",
+    difficulty: "Medium"
+  },
+  {
+    id: 228,
+    question: "What is Failover Routing used for?",
+    options: [
+      "To distribute traffic across multiple resources",
+      "To route traffic to backup resources if primary fails",
+      "To route traffic based on user location",
+      "To route traffic based on weights"
+    ],
+    correctAnswer: 1,
+    explanation: "Failover Routing routes traffic to backup resources if the primary resource fails. It requires health checks and is used for disaster recovery and high availability scenarios.",
+    category: "Routing Policies",
+    difficulty: "Medium"
+  },
+  {
+    id: 229,
+    question: "Which routing policies support health checks?",
+    options: [
+      "All routing policies support health checks",
+      "Only Simple and Weighted routing support health checks",
+      "Only Failover and Multi-Value Answer routing support health checks",
+      "Only Latency-Based and Geolocation routing support health checks"
+    ],
+    correctAnswer: 2,
+    explanation: "Only Failover and Multi-Value Answer routing policies support health checks. Other routing policies route traffic regardless of the health of the target resources.",
+    category: "Routing Policies",
+    difficulty: "Medium"
+  },
+  {
+    id: 230,
+    question: "What is the difference between Geolocation and Geoproximity routing?",
+    options: [
+      "There is no difference",
+      "Geolocation routes based on user location, Geoproximity routes based on geographic distance",
+      "Geolocation is free, Geoproximity costs money",
+      "Geolocation supports health checks, Geoproximity doesn't"
+    ],
+    correctAnswer: 1,
+    explanation: "Geolocation routing routes traffic based on the user's location (country, state, etc.). Geoproximity routing routes based on geographic distance and allows traffic engineering with bias settings.",
+    category: "Routing Policies",
+    difficulty: "Hard"
+  },
+  {
+    id: 231,
+    question: "What is Multi-Value Answer routing used for?",
+    options: [
+      "To route traffic to multiple regions",
+      "To return multiple healthy resources for simple load balancing",
+      "To route traffic based on weights",
+      "To route traffic based on latency"
+    ],
+    correctAnswer: 1,
+    explanation: "Multi-Value Answer routing returns multiple healthy resources to the client, providing simple load balancing. It supports health checks and can return up to 8 healthy records.",
+    category: "Routing Policies",
+    difficulty: "Medium"
+  },
+  {
+    id: 232,
+    question: "What is the maximum number of records that Multi-Value Answer routing can return?",
+    options: [
+      "4 records",
+      "8 records",
+      "16 records",
+      "Unlimited"
+    ],
+    correctAnswer: 1,
+    explanation: "Multi-Value Answer routing can return up to 8 healthy records to the client. If more than 8 records are configured, only the first 8 healthy records are returned.",
+    category: "Routing Policies",
+    difficulty: "Easy"
+  },
+  {
+    id: 233,
+    question: "What is a health check in Route 53?",
+    options: [
+      "A way to monitor DNS queries",
+      "A way to monitor the health of resources",
+      "A way to encrypt DNS traffic",
+      "A way to cache DNS records"
+    ],
+    correctAnswer: 1,
+    explanation: "Health checks in Route 53 monitor the health of resources by sending requests to specified endpoints. They can be used with Failover and Multi-Value Answer routing policies.",
+    category: "Health Checks",
+    difficulty: "Easy"
+  },
+  {
+    id: 234,
+    question: "What types of health checks does Route 53 support?",
+    options: [
+      "Only HTTP health checks",
+      "HTTP, HTTPS, TCP, and String Matching health checks",
+      "Only TCP health checks",
+      "Only HTTPS health checks"
+    ],
+    correctAnswer: 1,
+    explanation: "Route 53 supports HTTP, HTTPS, TCP, and String Matching health checks. String Matching health checks verify that the response contains specific text.",
+    category: "Health Checks",
+    difficulty: "Medium"
+  },
+  {
+    id: 235,
+    question: "What is the default interval for Route 53 health checks?",
+    options: [
+      "10 seconds",
+      "30 seconds",
+      "60 seconds",
+      "5 minutes"
+    ],
+    correctAnswer: 1,
+    explanation: "The default interval for Route 53 health checks is 30 seconds. This can be configured to 10 or 30 seconds for standard health checks.",
+    category: "Health Checks",
+    difficulty: "Easy"
+  },
+  {
+    id: 236,
+    question: "What is the default timeout for Route 53 health checks?",
+    options: [
+      "2 seconds",
+      "5 seconds",
+      "10 seconds",
+      "30 seconds"
+    ],
+    correctAnswer: 1,
+    explanation: "The default timeout for Route 53 health checks is 5 seconds. This can be configured between 1 and 10 seconds.",
+    category: "Health Checks",
+    difficulty: "Easy"
+  },
+  {
+    id: 237,
+    question: "What is the default failure threshold for Route 53 health checks?",
+    options: [
+      "1 consecutive failure",
+      "3 consecutive failures",
+      "5 consecutive failures",
+      "10 consecutive failures"
+    ],
+    correctAnswer: 1,
+    explanation: "The default failure threshold for Route 53 health checks is 3 consecutive failures. This can be configured between 1 and 10 consecutive failures.",
+    category: "Health Checks",
+    difficulty: "Easy"
+  },
+  {
+    id: 238,
+    question: "What is a private hosted zone in Route 53?",
+    options: [
+      "A hosted zone that is free",
+      "A hosted zone that is only accessible within specified VPCs",
+      "A hosted zone that is encrypted",
+      "A hosted zone that is backed up"
+    ],
+    correctAnswer: 1,
+    explanation: "A private hosted zone is a hosted zone that is only accessible within the specified VPCs. It doesn't resolve from the internet and is used for internal DNS resolution.",
+    category: "Configuration",
+    difficulty: "Medium"
+  },
+  {
+    id: 239,
+    question: "How long can DNS changes take to propagate globally?",
+    options: [
+      "Up to 1 hour",
+      "Up to 24 hours",
+      "Up to 48 hours",
+      "Up to 1 week"
+    ],
+    correctAnswer: 2,
+    explanation: "DNS changes can take up to 48 hours to propagate globally, though most resolvers update within minutes to hours. The actual time depends on TTL values and resolver caching.",
+    category: "Configuration",
+    difficulty: "Medium"
+  },
+  {
+    id: 240,
+    question: "What is the cost of a public hosted zone in Route 53?",
+    options: [
+      "Free",
+      "$0.25 per month",
+      "$0.50 per month",
+      "$1.00 per month"
+    ],
+    correctAnswer: 2,
+    explanation: "Public hosted zones in Route 53 cost $0.50 per month. This is charged regardless of the number of queries or records in the hosted zone.",
+    category: "Pricing",
+    difficulty: "Easy"
+  }
+]
 
-const categories = ['All', 'Instance Types', 'Pricing', 'Storage', 'Security', 'Networking', 'Auto Scaling', 'Instance Management', 'Storage Classes', 'Management', 'Performance', 'Integration', 'Billing', 'Overview', 'Configuration', 'Error Handling', 'Deployment', 'Limits']
+const allQuestions = [...ec2Questions, ...s3Questions, ...vpcQuestions, ...rdsQuestions, ...lambdaQuestions, ...route53Questions]
+
+const categories = ['All', 'Instance Types', 'Pricing', 'Storage', 'Security', 'Networking', 'Auto Scaling', 'Instance Management', 'Storage Classes', 'Management', 'Performance', 'Integration', 'Billing', 'Overview', 'Configuration', 'Error Handling', 'Deployment', 'Limits', 'Record Types', 'Routing Policies', 'Health Checks']
 const difficulties = ['All', 'Easy', 'Medium', 'Hard']
 
-const services = ['All', 'EC2', 'S3', 'VPC', 'RDS', 'Lambda']
+const services = ['All', 'EC2', 'S3', 'VPC', 'RDS', 'Lambda', 'Route 53']
 
 export default function QAPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -3439,6 +3722,8 @@ export default function QAPage() {
         filtered = filtered.filter(q => q.id > 150 && q.id <= 200)
       } else if (selectedService === 'Lambda') {
         filtered = filtered.filter(q => q.id > 200 && q.id <= 220)
+      } else if (selectedService === 'Route 53') {
+        filtered = filtered.filter(q => q.id > 220 && q.id <= 240)
       }
     }
 
@@ -3479,10 +3764,10 @@ export default function QAPage() {
               </h1>
             </div>
             <p className="text-xl max-w-3xl mx-auto">
-              Test your knowledge with interactive questions covering EC2, S3, VPC, RDS, and Lambda concepts
+              Test your knowledge with interactive questions covering EC2, S3, VPC, RDS, Lambda, and Route 53 concepts
             </p>
             <div className="flex justify-center space-x-4 text-sm text-gray-500">
-              <span>📚 220 Questions</span>
+              <span>📚 240 Questions</span>
               <span>🎯 Multiple Choice</span>
               <span>📊 Progress Tracking</span>
             </div>

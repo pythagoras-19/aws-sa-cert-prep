@@ -15,7 +15,8 @@ import {
   Home,
   Database,
   Network,
-  Zap
+  Zap,
+  Globe
 } from 'lucide-react'
 
 const navigationItems = [
@@ -26,6 +27,7 @@ const navigationItems = [
   { name: 'VPC Reference', href: '/reference/vpc', icon: Network },
   { name: 'RDS Reference', href: '/reference/rds', icon: Database },
   { name: 'Lambda Reference', href: '/reference/lambda', icon: Zap },
+  { name: 'Route 53 Reference', href: '/reference/route53', icon: Globe },
   { name: 'Q&A', href: '/qa', icon: HelpCircle },
   { name: 'Flashcards', href: '/flashcards', icon: CreditCard },
   { name: 'Practice Exams', href: '/exams', icon: FileText },
