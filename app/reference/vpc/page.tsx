@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
   Shield, 
@@ -159,7 +159,7 @@ export default function VPCReferencePage() {
                   return (
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <Icon className="w-6 h-6 text-blue-600" />
+                        {Icon && <Icon className="w-6 h-6 text-blue-600" />}
                       </div>
                       <div>
                         <h2 className="text-3xl font-bold text-gray-900">{section?.label}</h2>

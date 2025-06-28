@@ -414,11 +414,13 @@ export default function EC2ReferencePage() {
                                     <span>Memory:</span>
                                     <span className="font-semibold">{instance.memory}</span>
                                   </div>
-                                  <div className="flex justify-between">
-                                    <span>Network:</span>
-                                    <span className="font-semibold">{instance.network}</span>
-                                  </div>
-                                  {instance.storage && (
+                                  {'network' in instance && (
+                                    <div className="flex justify-between">
+                                      <span>Network:</span>
+                                      <span className="font-semibold">{instance.network}</span>
+                                    </div>
+                                  )}
+                                  {'storage' in instance && (
                                     <div className="flex justify-between">
                                       <span>Storage:</span>
                                       <span className="font-semibold">{instance.storage}</span>
