@@ -4,8 +4,6 @@ import React, { useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { 
-  Menu, 
-  X, 
   BookOpen, 
   Server, 
   HelpCircle, 
@@ -46,19 +44,6 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden bg-white border-b">
-        <div className="container mx-auto px-4 py-4">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center text-gray-700 hover:text-aws-orange"
-          >
-            {isOpen ? <X className="w-6 h-6 mr-2" /> : <Menu className="w-6 h-6 mr-2" />}
-            {isOpen ? 'Close Menu' : 'Open Menu'}
-          </button>
-        </div>
-      </div>
-
       {/* Sidebar */}
       <motion.div
         initial={{ x: -300 }}
@@ -84,7 +69,7 @@ export default function Sidebar() {
           </div>
 
           {/* Navigation Items */}
-          <nav className="flex-1 p-4 space-y-2">
+          <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
             {navigationItems.map((item) => {
               const Icon = item.icon
               return (
