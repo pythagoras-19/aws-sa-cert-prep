@@ -97,7 +97,7 @@ export default function Home() {
         <div className="min-h-screen">
           {/* Hero Section */}
           <section className="gradient-bg text-white">
-            <div className="container mx-auto px-4 py-20">
+            <div className="container mx-auto px-4 py-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -109,10 +109,10 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="mb-8"
+                  className="mb-4"
                 >
-                  <div className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                    <svg width="48" height="48" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       {/* Book cover */}
                       <rect x="4" y="6" width="20" height="20" rx="2" fill="#FF6B35" stroke="#E55A2B" strokeWidth="1"/>
                       
@@ -134,25 +134,25 @@ export default function Home() {
                   </div>
                 </motion.div>
                 
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                <h1 className="text-3xl md:text-4xl font-bold mb-3">
                   AWS Solutions Architect
-                  <span className="block text-2xl md:text-3xl font-normal mt-2">
+                  <span className="block text-lg md:text-xl font-normal mt-1">
                     Associate Exam Prep
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                <p className="text-base md:text-lg mb-4 max-w-3xl mx-auto">
                   Master the core concepts, practice with real exam questions, and build confidence 
                   with our comprehensive learning platform.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <button 
-                    className="btn-secondary text-lg px-8 py-3"
+                    className="btn-secondary text-base px-6 py-2"
                     onClick={() => handleFeatureClick('/concepts')}
                   >
                     Start Learning
                   </button>
                   <button 
-                    className="bg-white text-aws-orange font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors"
+                    className="bg-white text-aws-orange font-semibold py-2 px-6 rounded-lg text-base hover:bg-gray-100 transition-colors"
                     onClick={() => handleFeatureClick('/exams')}
                   >
                     Take Practice Exam
