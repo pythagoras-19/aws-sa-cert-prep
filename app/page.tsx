@@ -98,6 +98,36 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
+            {/* Book Icon */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <svg width="48" height="48" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Book cover */}
+                  <rect x="4" y="6" width="20" height="20" rx="2" fill="#FF6B35" stroke="#E55A2B" stroke-width="1"/>
+                  
+                  {/* Book pages */}
+                  <rect x="6" y="8" width="16" height="16" rx="1" fill="#FFFFFF"/>
+                  
+                  {/* Book spine */}
+                  <rect x="4" y="6" width="2" height="20" fill="#E55A2B"/>
+                  
+                  {/* Book title lines */}
+                  <rect x="8" y="12" width="12" height="1" fill="#FF6B35"/>
+                  <rect x="8" y="15" width="8" height="1" fill="#FF6B35"/>
+                  <rect x="8" y="18" width="10" height="1" fill="#FF6B35"/>
+                  
+                  {/* AWS cloud symbol */}
+                  <path d="M20 10C21.5 10 22.5 11 22.5 12.5C22.5 14 21.5 15 20 15C18.5 15 17.5 14 17.5 12.5C17.5 11 18.5 10 20 10Z" fill="#FF6B35"/>
+                  <path d="M18 12C19 12 19.5 12.5 19.5 13.5C19.5 14.5 19 15 18 15C17 15 16.5 14.5 16.5 13.5C16.5 12.5 17 12 18 12Z" fill="#FFFFFF"/>
+                </svg>
+              </div>
+            </motion.div>
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               AWS Solutions Architect
               <span className="block text-2xl md:text-3xl font-normal mt-2">
