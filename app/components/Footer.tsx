@@ -58,7 +58,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
                 <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   {/* Book cover */}
-                  <rect x="4" y="6" width="20" height="20" rx="2" fill="#FF6B35" stroke="#E55A2B" stroke-width="1"/>
+                  <rect x="4" y="6" width="20" height="20" rx="2" fill="#FF6B35" stroke="#E55A2B" strokeWidth="1"/>
                   
                   {/* Book pages */}
                   <rect x="6" y="8" width="16" height="16" rx="1" fill="#FFFFFF"/>

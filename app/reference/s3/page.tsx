@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import TopicsBar from '../../components/TopicsBar'
 import { 
   Database, 
   Clock, 
@@ -10,8 +11,6 @@ import {
   Code,
   Globe,
   Lock,
-  Menu,
-  X,
   ChevronDown,
   ChevronRight,
   ExternalLink,
@@ -39,7 +38,6 @@ import {
 
 export default function S3ReferencePage() {
   const [activeSection, setActiveSection] = useState('overview')
-  const [sidebarOpen, setSidebarOpen] = useState(true)
 
   const sections = [
     { id: 'overview', label: 'Overview', icon: Database },
@@ -297,343 +295,297 @@ export default function S3ReferencePage() {
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden bg-white border-b">
-        <div className="container mx-auto px-4 py-4">
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="flex items-center text-gray-700 hover:text-blue-600"
-          >
-            {sidebarOpen ? <X className="w-6 h-6 mr-2" /> : <Menu className="w-6 h-6 mr-2" />}
-            {sidebarOpen ? 'Close Menu' : 'Open Menu'}
-          </button>
-        </div>
-      </div>
+      {/* Topics Bar */}
+      <TopicsBar
+        topics={sections}
+        activeTopic={activeSection}
+        onTopicChange={setActiveSection}
+        title="S3 Reference"
+      />
 
       {/* Main Content */}
-      <div className="flex">
-        {/* Sidebar */}
-        <motion.div
-          initial={{ x: -300 }}
-          animate={{ x: sidebarOpen ? 0 : -300 }}
-          transition={{ duration: 0.3 }}
-          className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-white shadow-lg lg:shadow-none transform ${
-            sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-          } lg:translate-x-0 transition-transform duration-300 ease-in-out`}
-        >
-          <div className="h-full flex flex-col">
-            {/* Sidebar Header */}
-            <div className="p-6 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-900">S3 Topics</h2>
-              <p className="text-sm text-gray-600 mt-1">Navigate through sections</p>
-            </div>
-
-            {/* Navigation Items */}
-            <nav className="flex-1 p-4 space-y-2">
-              {sections.map((section) => {
-                const Icon = section.icon
-                return (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    className={`w-full flex items-center p-3 rounded-lg transition-colors ${
-                      activeSection === section.id
-                        ? 'bg-blue-50 text-blue-700 border border-blue-200'
-                        : 'text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    <Icon className="w-5 h-5 mr-3" />
-                    <span className="font-medium">{section.label}</span>
-                  </button>
-                )
-              })}
-            </nav>
-          </div>
-        </motion.div>
-
+      <div className="container mx-auto px-4 py-8">
         {/* Content Area */}
-        <div className="flex-1 lg:ml-0">
-          <div className="container mx-auto px-4 py-8">
-            {/* Overview Section */}
-            {activeSection === 'overview' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">S3 Overview</h2>
+        <div className="max-w-6xl mx-auto">
+          {/* Overview Section */}
+          {activeSection === 'overview' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">S3 Overview</h2>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">What is Amazon S3?</h3>
+                    <p className="text-gray-700 mb-4">
+                      Amazon Simple Storage Service (S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.
+                    </p>
+                    <p className="text-gray-700 mb-4">
+                      S3 is designed for 99.999999999% (11 9s) of durability and stores data for millions of applications for companies all around the world.
+                    </p>
+                  </div>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">What is Amazon S3?</h3>
-                      <p className="text-gray-700 mb-4">
-                        Amazon Simple Storage Service (S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.
-                      </p>
-                      <p className="text-gray-700 mb-4">
-                        S3 is designed for 99.999999999% (11 9s) of durability and stores data for millions of applications for companies all around the world.
-                      </p>
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                    <h4 className="font-semibold text-gray-900 mb-3">Key Benefits</h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>99.999999999% durability</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>99.99% availability</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Unlimited storage</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Multiple storage classes</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Common Use Cases</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <Database className="w-8 h-8 text-blue-500 mb-3" />
+                      <h4 className="font-semibold text-gray-900 mb-2">Data Storage</h4>
+                      <p className="text-gray-600">Store and retrieve any amount of data</p>
                     </div>
-                    
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
-                      <h4 className="font-semibold text-gray-900 mb-3">Key Benefits</h4>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>99.999999999% durability</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>99.99% availability</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>Unlimited storage</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>Multiple storage classes</span>
-                        </li>
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <Globe className="w-8 h-8 text-green-500 mb-3" />
+                      <h4 className="font-semibold text-gray-900 mb-2">Content Distribution</h4>
+                      <p className="text-gray-600">Host static websites and media files</p>
+                    </div>
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <Archive className="w-8 h-8 text-purple-500 mb-3" />
+                      <h4 className="font-semibold text-gray-900 mb-2">Backup & Archive</h4>
+                      <p className="text-gray-600">Long-term data retention and backup</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Storage Classes Section */}
+          {activeSection === 'storage-classes' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Storage Classes</h2>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  {storageClasses.map((storageClass, index) => {
+                    const Icon = storageClass.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${storageClass.color} text-white mb-4`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{storageClass.class}</h3>
+                        <p className="text-gray-600 mb-4">{storageClass.description}</p>
+                        
+                        <div className="space-y-3">
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                              <span className="font-medium text-gray-700">Availability:</span>
+                              <p className="text-gray-600">{storageClass.availability}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium text-gray-700">Durability:</span>
+                              <p className="text-gray-600">{storageClass.durability}</p>
+                            </div>
+                          </div>
+                          <div>
+                            <span className="font-medium text-gray-700">Access Time:</span>
+                            <p className="text-gray-600">{storageClass.access}</p>
+                          </div>
+                          <div>
+                            <span className="font-medium text-gray-700">Use Case:</span>
+                            <p className="text-gray-600">{storageClass.useCase}</p>
+                          </div>
+                          <div className="bg-gray-50 p-3 rounded">
+                            <span className="font-medium text-gray-700">Cost:</span>
+                            <p className="text-gray-600">{storageClass.cost}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Features Section */}
+          {activeSection === 'features' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">S3 Features</h2>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  {features.map((feature, index) => {
+                    const Icon = feature.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} text-white mb-4`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.feature}</h3>
+                        <p className="text-gray-600 mb-4">{feature.description}</p>
+                        
+                        <div className="space-y-3">
+                          <div>
+                            <span className="font-medium text-gray-700">Benefits:</span>
+                            <ul className="text-sm text-gray-600 list-disc list-inside mt-1">
+                              {feature.benefits.map((benefit, i) => (
+                                <li key={i}>{benefit}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="bg-gray-50 p-3 rounded">
+                            <span className="font-medium text-gray-700">Use Case:</span>
+                            <p className="text-gray-600">{feature.useCase}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Pricing Section */}
+          {activeSection === 'pricing' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Pricing Model</h2>
+                
+                <div className="grid md:grid-cols-3 gap-6">
+                  {pricingComponents.map((component, index) => {
+                    const Icon = component.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${component.color} text-white mb-4`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{component.component}</h3>
+                        <p className="text-gray-600 mb-4">{component.description}</p>
+                        
+                        <ul className="space-y-2 mb-4">
+                          {component.details.map((detail, i) => (
+                            <li key={i} className="text-sm text-gray-700 flex items-start">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                        
+                        <div className="bg-gray-50 p-3 rounded">
+                          <p className="text-xs text-gray-600">{component.notes}</p>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                <div className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Pricing Example</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium text-gray-900 mb-2">Scenario:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• 100 GB stored in S3 Standard</li>
+                        <li>• 10,000 GET requests per month</li>
+                        <li>• 1,000 PUT requests per month</li>
+                        <li>• 50 GB data transfer out</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 mb-2">Cost Calculation:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Storage: $2.30</li>
+                        <li>• GET requests: $0.004</li>
+                        <li>• PUT requests: $0.005</li>
+                        <li>• Data transfer: $4.41</li>
+                        <li>• <strong>Total: $6.72/month</strong></li>
                       </ul>
                     </div>
                   </div>
-
-                  <div className="mt-8">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Common Use Cases</h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                      <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <Database className="w-8 h-8 text-blue-500 mb-3" />
-                        <h4 className="font-semibold text-gray-900 mb-2">Data Storage</h4>
-                        <p className="text-gray-600">Store and retrieve any amount of data</p>
-                      </div>
-                      <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <Globe className="w-8 h-8 text-green-500 mb-3" />
-                        <h4 className="font-semibold text-gray-900 mb-2">Content Distribution</h4>
-                        <p className="text-gray-600">Host static websites and media files</p>
-                      </div>
-                      <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <Archive className="w-8 h-8 text-purple-500 mb-3" />
-                        <h4 className="font-semibold text-gray-900 mb-2">Backup & Archive</h4>
-                        <p className="text-gray-600">Long-term data retention and backup</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </motion.div>
-            )}
+              </div>
+            </motion.div>
+          )}
 
-            {/* Storage Classes Section */}
-            {activeSection === 'storage-classes' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Storage Classes</h2>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {storageClasses.map((storageClass, index) => {
-                      const Icon = storageClass.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6">
-                          <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${storageClass.color} text-white mb-4`}>
-                            <Icon className="w-6 h-6" />
+          {/* Exam Tips Section */}
+          {activeSection === 'exam-tips' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Exam Tips</h2>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  {examTips.map((tip, index) => {
+                    const Icon = tip.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6">
+                        <div className="flex items-start">
+                          <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${
+                            tip.importance === 'High' ? 'bg-red-100 text-red-600' :
+                            tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-600' :
+                            'bg-green-100 text-green-600'
+                          } mr-4 flex-shrink-0`}>
+                            <Icon className="w-5 h-5" />
                           </div>
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">{storageClass.class}</h3>
-                          <p className="text-gray-600 mb-4">{storageClass.description}</p>
-                          
-                          <div className="space-y-3">
-                            <div className="grid grid-cols-2 gap-4 text-sm">
-                              <div>
-                                <span className="font-medium text-gray-700">Availability:</span>
-                                <p className="text-gray-600">{storageClass.availability}</p>
-                              </div>
-                              <div>
-                                <span className="font-medium text-gray-700">Durability:</span>
-                                <p className="text-gray-600">{storageClass.durability}</p>
-                              </div>
+                          <div className="flex-1">
+                            <div className="flex items-center mb-2">
+                              <h3 className="text-lg font-semibold text-gray-900">{tip.tip}</h3>
+                              <span className={`ml-2 px-2 py-1 text-xs font-medium rounded ${
+                                tip.importance === 'High' ? 'bg-red-100 text-red-700' :
+                                tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                                'bg-green-100 text-green-700'
+                              }`}>
+                                {tip.importance}
+                              </span>
                             </div>
-                            <div>
-                              <span className="font-medium text-gray-700">Access Time:</span>
-                              <p className="text-gray-600">{storageClass.access}</p>
-                            </div>
-                            <div>
-                              <span className="font-medium text-gray-700">Use Case:</span>
-                              <p className="text-gray-600">{storageClass.useCase}</p>
-                            </div>
-                            <div className="bg-gray-50 p-3 rounded">
-                              <span className="font-medium text-gray-700">Cost:</span>
-                              <p className="text-gray-600">{storageClass.cost}</p>
-                            </div>
+                            <p className="text-gray-700">{tip.description}</p>
                           </div>
                         </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* Features Section */}
-            {activeSection === 'features' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">S3 Features</h2>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {features.map((feature, index) => {
-                      const Icon = feature.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6">
-                          <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} text-white mb-4`}>
-                            <Icon className="w-6 h-6" />
-                          </div>
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.feature}</h3>
-                          <p className="text-gray-600 mb-4">{feature.description}</p>
-                          
-                          <div className="space-y-3">
-                            <div>
-                              <span className="font-medium text-gray-700">Benefits:</span>
-                              <ul className="text-sm text-gray-600 list-disc list-inside mt-1">
-                                {feature.benefits.map((benefit, i) => (
-                                  <li key={i}>{benefit}</li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="bg-gray-50 p-3 rounded">
-                              <span className="font-medium text-gray-700">Use Case:</span>
-                              <p className="text-gray-600">{feature.useCase}</p>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* Pricing Section */}
-            {activeSection === 'pricing' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Pricing Model</h2>
-                  
-                  <div className="grid md:grid-cols-3 gap-6">
-                    {pricingComponents.map((component, index) => {
-                      const Icon = component.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6">
-                          <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${component.color} text-white mb-4`}>
-                            <Icon className="w-6 h-6" />
-                          </div>
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">{component.component}</h3>
-                          <p className="text-gray-600 mb-4">{component.description}</p>
-                          
-                          <ul className="space-y-2 mb-4">
-                            {component.details.map((detail, i) => (
-                              <li key={i} className="text-sm text-gray-700 flex items-start">
-                                <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                          
-                          <div className="bg-gray-50 p-3 rounded">
-                            <p className="text-xs text-gray-600">{component.notes}</p>
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                  <div className="mt-8 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Pricing Example</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-medium text-gray-900 mb-2">Scenario:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                          <li>• 100 GB stored in S3 Standard</li>
-                          <li>• 10,000 GET requests per month</li>
-                          <li>• 1,000 PUT requests per month</li>
-                          <li>• 50 GB data transfer out</li>
-                        </ul>
                       </div>
-                      <div>
-                        <h4 className="font-medium text-gray-900 mb-2">Cost Calculation:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                          <li>• Storage: $2.30</li>
-                          <li>• GET requests: $0.004</li>
-                          <li>• PUT requests: $0.005</li>
-                          <li>• Data transfer: $4.41</li>
-                          <li>• <strong>Total: $6.72/month</strong></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                    )
+                  })}
                 </div>
-              </motion.div>
-            )}
-
-            {/* Exam Tips Section */}
-            {activeSection === 'exam-tips' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Exam Tips</h2>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {examTips.map((tip, index) => {
-                      const Icon = tip.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6">
-                          <div className="flex items-start">
-                            <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${
-                              tip.importance === 'High' ? 'bg-red-100 text-red-600' :
-                              tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-600' :
-                              'bg-green-100 text-green-600'
-                            } mr-4 flex-shrink-0`}>
-                              <Icon className="w-5 h-5" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center mb-2">
-                                <h3 className="text-lg font-semibold text-gray-900">{tip.tip}</h3>
-                                <span className={`ml-2 px-2 py-1 text-xs font-medium rounded ${
-                                  tip.importance === 'High' ? 'bg-red-100 text-red-700' :
-                                  tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
-                                  'bg-green-100 text-green-700'
-                                }`}>
-                                  {tip.importance}
-                                </span>
-                              </div>
-                              <p className="text-gray-700">{tip.description}</p>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import TopicsBar from '../../components/TopicsBar'
 import { 
   Zap, 
   Clock, 
@@ -11,8 +12,6 @@ import {
   Database,
   Globe,
   Lock,
-  Menu,
-  X,
   ChevronDown,
   ChevronRight,
   ExternalLink,
@@ -32,7 +31,6 @@ import {
 
 export default function LambdaReferencePage() {
   const [activeSection, setActiveSection] = useState('overview')
-  const [sidebarOpen, setSidebarOpen] = useState(true)
 
   const sections = [
     { id: 'overview', label: 'Overview', icon: Zap },
@@ -235,326 +233,280 @@ export default function LambdaReferencePage() {
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden bg-white border-b">
-        <div className="container mx-auto px-4 py-4">
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="flex items-center text-gray-700 hover:text-yellow-600"
-          >
-            {sidebarOpen ? <X className="w-6 h-6 mr-2" /> : <Menu className="w-6 h-6 mr-2" />}
-            {sidebarOpen ? 'Close Menu' : 'Open Menu'}
-          </button>
-        </div>
-      </div>
+      {/* Topics Bar */}
+      <TopicsBar
+        topics={sections}
+        activeTopic={activeSection}
+        onTopicChange={setActiveSection}
+        title="Lambda Reference"
+      />
 
       {/* Main Content */}
-      <div className="flex">
-        {/* Sidebar */}
-        <motion.div
-          initial={{ x: -300 }}
-          animate={{ x: sidebarOpen ? 0 : -300 }}
-          transition={{ duration: 0.3 }}
-          className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-white shadow-lg lg:shadow-none transform ${
-            sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-          } lg:translate-x-0 transition-transform duration-300 ease-in-out`}
-        >
-          <div className="h-full flex flex-col">
-            {/* Sidebar Header */}
-            <div className="p-6 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-900">Lambda Topics</h2>
-              <p className="text-sm text-gray-600 mt-1">Navigate through sections</p>
-            </div>
-
-            {/* Navigation Items */}
-            <nav className="flex-1 p-4 space-y-2">
-              {sections.map((section) => {
-                const Icon = section.icon
-                return (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    className={`w-full flex items-center p-3 rounded-lg transition-colors ${
-                      activeSection === section.id
-                        ? 'bg-yellow-50 text-yellow-700 border border-yellow-200'
-                        : 'text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    <Icon className="w-5 h-5 mr-3" />
-                    <span className="font-medium">{section.label}</span>
-                  </button>
-                )
-              })}
-            </nav>
-          </div>
-        </motion.div>
-
+      <div className="container mx-auto px-4 py-8">
         {/* Content Area */}
-        <div className="flex-1 lg:ml-0">
-          <div className="container mx-auto px-4 py-8">
-            {/* Overview Section */}
-            {activeSection === 'overview' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lambda Overview</h2>
+        <div className="max-w-6xl mx-auto">
+          {/* Overview Section */}
+          {activeSection === 'overview' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Lambda Overview</h2>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">What is AWS Lambda?</h3>
+                    <p className="text-gray-700 mb-4">
+                      AWS Lambda is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources.
+                    </p>
+                    <p className="text-gray-700 mb-4">
+                      You can use Lambda to extend other AWS services with custom logic, or create your own backend services that operate at AWS scale, performance, and security.
+                    </p>
+                  </div>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">What is AWS Lambda?</h3>
-                      <p className="text-gray-700 mb-4">
-                        AWS Lambda is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources.
-                      </p>
-                      <p className="text-gray-700 mb-4">
-                        You can use Lambda to extend other AWS services with custom logic, or create your own backend services that operate at AWS scale, performance, and security.
-                      </p>
+                  <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg">
+                    <h4 className="font-semibold text-gray-900 mb-3">Key Benefits</h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>No servers to manage</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Continuous scaling</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Subsecond metering</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>High availability</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Common Use Cases</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <Database className="w-8 h-8 text-blue-500 mb-3" />
+                      <h4 className="font-semibold text-gray-900 mb-2">Data Processing</h4>
+                      <p className="text-gray-600">Process data from S3, DynamoDB, Kinesis streams</p>
                     </div>
-                    
-                    <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg">
-                      <h4 className="font-semibold text-gray-900 mb-3">Key Benefits</h4>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>No servers to manage</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>Continuous scaling</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>Subsecond metering</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>High availability</span>
-                        </li>
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <Globe className="w-8 h-8 text-green-500 mb-3" />
+                      <h4 className="font-semibold text-gray-900 mb-2">Web Applications</h4>
+                      <p className="text-gray-600">Build APIs and web backends</p>
+                    </div>
+                    <div className="bg-white border border-gray-200 rounded-lg p-6">
+                      <Server className="w-8 h-8 text-purple-500 mb-3" />
+                      <h4 className="font-semibold text-gray-900 mb-2">IoT Backends</h4>
+                      <p className="text-gray-600">Process IoT device data</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Runtime Environments Section */}
+          {activeSection === 'runtimes' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Runtime Environments</h2>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {runtimeEnvironments.map((runtime, index) => {
+                    const Icon = runtime.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${runtime.color} text-white mb-4`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{runtime.runtime}</h3>
+                        <p className="text-gray-600 mb-3">{runtime.description}</p>
+                        
+                        <div className="space-y-2">
+                          <div>
+                            <span className="text-sm font-medium text-gray-700">Versions:</span>
+                            <p className="text-sm text-gray-600">{runtime.versions.join(', ')}</p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium text-gray-700">Use Cases:</span>
+                            <ul className="text-sm text-gray-600 list-disc list-inside">
+                              {runtime.useCases.map((useCase, i) => (
+                                <li key={i}>{useCase}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Pricing Section */}
+          {activeSection === 'pricing' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Pricing Model</h2>
+                
+                <div className="grid md:grid-cols-3 gap-6">
+                  {pricingComponents.map((component, index) => {
+                    const Icon = component.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${component.color} text-white mb-4`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{component.component}</h3>
+                        <p className="text-gray-600 mb-4">{component.description}</p>
+                        
+                        <ul className="space-y-2 mb-4">
+                          {component.details.map((detail, i) => (
+                            <li key={i} className="text-sm text-gray-700 flex items-start">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                        
+                        <div className="bg-gray-50 p-3 rounded">
+                          <p className="text-xs text-gray-600">{component.notes}</p>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                <div className="mt-8 bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Pricing Example</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium text-gray-900 mb-2">Scenario:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• 1M requests per month</li>
+                        <li>• 128 MB memory allocation</li>
+                        <li>• 100ms average duration</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 mb-2">Cost Calculation:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Requests: Free (within free tier)</li>
+                        <li>• Compute: Free (within free tier)</li>
+                        <li>• <strong>Total: $0.00</strong></li>
                       </ul>
                     </div>
                   </div>
-
-                  <div className="mt-8">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Common Use Cases</h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                      <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <Database className="w-8 h-8 text-blue-500 mb-3" />
-                        <h4 className="font-semibold text-gray-900 mb-2">Data Processing</h4>
-                        <p className="text-gray-600">Process data from S3, DynamoDB, Kinesis streams</p>
-                      </div>
-                      <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <Globe className="w-8 h-8 text-green-500 mb-3" />
-                        <h4 className="font-semibold text-gray-900 mb-2">Web Applications</h4>
-                        <p className="text-gray-600">Build APIs and web backends</p>
-                      </div>
-                      <div className="bg-white border border-gray-200 rounded-lg p-6">
-                        <Server className="w-8 h-8 text-purple-500 mb-3" />
-                        <h4 className="font-semibold text-gray-900 mb-2">IoT Backends</h4>
-                        <p className="text-gray-600">Process IoT device data</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </motion.div>
-            )}
+              </div>
+            </motion.div>
+          )}
 
-            {/* Runtime Environments Section */}
-            {activeSection === 'runtimes' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Runtime Environments</h2>
-                  
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {runtimeEnvironments.map((runtime, index) => {
-                      const Icon = runtime.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-                          <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${runtime.color} text-white mb-4`}>
-                            <Icon className="w-6 h-6" />
-                          </div>
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">{runtime.runtime}</h3>
-                          <p className="text-gray-600 mb-3">{runtime.description}</p>
-                          
-                          <div className="space-y-2">
-                            <div>
-                              <span className="text-sm font-medium text-gray-700">Versions:</span>
-                              <p className="text-sm text-gray-600">{runtime.versions.join(', ')}</p>
-                            </div>
-                            <div>
-                              <span className="text-sm font-medium text-gray-700">Use Cases:</span>
-                              <ul className="text-sm text-gray-600 list-disc list-inside">
-                                {runtime.useCases.map((useCase, i) => (
-                                  <li key={i}>{useCase}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
+          {/* Limits Section */}
+          {activeSection === 'limits' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Limits & Quotas</h2>
+                
+                <div className="space-y-8">
+                  {limits.map((category, index) => {
+                    const Icon = category.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6">
+                        <div className="flex items-center mb-4">
+                          <Icon className="w-6 h-6 text-yellow-600 mr-3" />
+                          <h3 className="text-xl font-semibold text-gray-900">{category.category}</h3>
                         </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* Pricing Section */}
-            {activeSection === 'pricing' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Pricing Model</h2>
-                  
-                  <div className="grid md:grid-cols-3 gap-6">
-                    {pricingComponents.map((component, index) => {
-                      const Icon = component.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6">
-                          <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${component.color} text-white mb-4`}>
-                            <Icon className="w-6 h-6" />
-                          </div>
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">{component.component}</h3>
-                          <p className="text-gray-600 mb-4">{component.description}</p>
-                          
-                          <ul className="space-y-2 mb-4">
-                            {component.details.map((detail, i) => (
-                              <li key={i} className="text-sm text-gray-700 flex items-start">
-                                <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                          
-                          <div className="bg-gray-50 p-3 rounded">
-                            <p className="text-xs text-gray-600">{component.notes}</p>
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                  <div className="mt-8 bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-lg">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Pricing Example</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-medium text-gray-900 mb-2">Scenario:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                          <li>• 1M requests per month</li>
-                          <li>• 128 MB memory allocation</li>
-                          <li>• 100ms average duration</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-gray-900 mb-2">Cost Calculation:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                          <li>• Requests: Free (within free tier)</li>
-                          <li>• Compute: Free (within free tier)</li>
-                          <li>• <strong>Total: $0.00</strong></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* Limits Section */}
-            {activeSection === 'limits' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Limits & Quotas</h2>
-                  
-                  <div className="space-y-8">
-                    {limits.map((category, index) => {
-                      const Icon = category.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6">
-                          <div className="flex items-center mb-4">
-                            <Icon className="w-6 h-6 text-yellow-600 mr-3" />
-                            <h3 className="text-xl font-semibold text-gray-900">{category.category}</h3>
-                          </div>
-                          
-                          <div className="grid md:grid-cols-2 gap-4">
-                            {category.limits.map((limit, i) => (
-                              <div key={i} className="bg-gray-50 p-4 rounded">
-                                <div className="flex justify-between items-start mb-2">
-                                  <span className="font-medium text-gray-900">{limit.name}</span>
-                                  <span className="text-sm font-semibold text-yellow-600">{limit.value}</span>
-                                </div>
-                                <p className="text-sm text-gray-600">{limit.note}</p>
+                        
+                        <div className="grid md:grid-cols-2 gap-4">
+                          {category.limits.map((limit, i) => (
+                            <div key={i} className="bg-gray-50 p-4 rounded">
+                              <div className="flex justify-between items-start mb-2">
+                                <span className="font-medium text-gray-900">{limit.name}</span>
+                                <span className="text-sm font-semibold text-yellow-600">{limit.value}</span>
                               </div>
-                            ))}
-                          </div>
+                              <p className="text-sm text-gray-600">{limit.note}</p>
+                            </div>
+                          ))}
                         </div>
-                      )
-                    })}
-                  </div>
+                      </div>
+                    )
+                  })}
                 </div>
-              </motion.div>
-            )}
+              </div>
+            </motion.div>
+          )}
 
-            {/* Exam Tips Section */}
-            {activeSection === 'exam-tips' && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
-                <div className="bg-white rounded-lg shadow-sm p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Exam Tips</h2>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {examTips.map((tip, index) => {
-                      const Icon = tip.icon
-                      return (
-                        <div key={index} className="border border-gray-200 rounded-lg p-6">
-                          <div className="flex items-start">
-                            <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${
-                              tip.importance === 'High' ? 'bg-red-100 text-red-600' :
-                              tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-600' :
-                              'bg-green-100 text-green-600'
-                            } mr-4 flex-shrink-0`}>
-                              <Icon className="w-5 h-5" />
+          {/* Exam Tips Section */}
+          {activeSection === 'exam-tips' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Exam Tips</h2>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  {examTips.map((tip, index) => {
+                    const Icon = tip.icon
+                    return (
+                      <div key={index} className="border border-gray-200 rounded-lg p-6">
+                        <div className="flex items-start">
+                          <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${
+                            tip.importance === 'High' ? 'bg-red-100 text-red-600' :
+                            tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-600' :
+                            'bg-green-100 text-green-600'
+                          } mr-4 flex-shrink-0`}>
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center mb-2">
+                              <h3 className="text-lg font-semibold text-gray-900">{tip.tip}</h3>
+                              <span className={`ml-2 px-2 py-1 text-xs font-medium rounded ${
+                                tip.importance === 'High' ? 'bg-red-100 text-red-700' :
+                                tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                                'bg-green-100 text-green-700'
+                              }`}>
+                                {tip.importance}
+                              </span>
                             </div>
-                            <div className="flex-1">
-                              <div className="flex items-center mb-2">
-                                <h3 className="text-lg font-semibold text-gray-900">{tip.tip}</h3>
-                                <span className={`ml-2 px-2 py-1 text-xs font-medium rounded ${
-                                  tip.importance === 'High' ? 'bg-red-100 text-red-700' :
-                                  tip.importance === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
-                                  'bg-green-100 text-green-700'
-                                }`}>
-                                  {tip.importance}
-                                </span>
-                              </div>
-                              <p className="text-gray-700">{tip.description}</p>
-                            </div>
+                            <p className="text-gray-700">{tip.description}</p>
                           </div>
                         </div>
-                      )
-                    })}
-                  </div>
+                      </div>
+                    )
+                  })}
                 </div>
-              </motion.div>
-            )}
-          </div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     </div>
