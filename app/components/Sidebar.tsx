@@ -15,7 +15,8 @@ import {
   Network,
   Zap,
   Globe,
-  ChevronRight
+  ChevronRight,
+  Layers
 } from 'lucide-react'
 
 const navigationItems = [
@@ -28,7 +29,8 @@ const navigationItems = [
   { name: 'Lambda Reference', href: '/reference/lambda', icon: Zap },
   { name: 'Route 53 Reference', href: '/reference/route53', icon: Globe },
   { name: 'Q&A', href: '/qa', icon: HelpCircle },
-  { name: 'Flashcards', href: '/flashcards', icon: CreditCard },
+  { name: 'EC2 Flashcards', href: '/flashcards', icon: CreditCard },
+  { name: 'Service Flashcards', href: '/service-flashcards', icon: Layers },
   { name: 'Practice Exams', href: '/exams', icon: FileText },
   { name: 'Study Guide', href: '/study-guide', icon: Brain },
 ]

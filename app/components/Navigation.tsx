@@ -174,7 +174,8 @@ export default function Navigation() {
               {pathname === '/' && 'Home'}
               {pathname === '/concepts' && 'Core Concepts'}
               {pathname === '/qa' && 'Q&A'}
-              {pathname === '/flashcards' && 'Flashcards'}
+              {pathname === '/flashcards' && 'EC2 Flashcards'}
+              {pathname === '/service-flashcards' && 'Service Flashcards'}
               {pathname === '/exams' && 'Practice Exams'}
               {pathname === '/study-guide' && 'Study Guide'}
             </h1>
