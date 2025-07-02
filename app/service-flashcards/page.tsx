@@ -716,56 +716,67 @@ const awsServices = [
   {
     id: 57,
     service: "SageMaker",
+    category: "Machine Learning",
     description: "Machine learning platform. Enables developers and data scientists to quickly and easily build, train, and deploy machine learning models at any scale."
   },
   {
     id: 58,
     service: "Comprehend",
+    category: "Machine Learning",
     description: "Natural language processing service. Uses machine learning to find insights and relationships in text. You can analyze text using sentiment analysis, entity recognition, and more."
   },
   {
     id: 59,
     service: "Rekognition",
+    category: "Machine Learning",
     description: "Image and video analysis service. Makes it easy to add image and video analysis to your applications. You just provide an image or video to the Rekognition API, and the service can identify objects, people, text, scenes, and activities."
   },
   {
     id: 60,
     service: "Polly",
+    category: "Machine Learning",
     description: "Text-to-speech service. Uses advanced deep learning technologies to synthesize speech that sounds like a human voice. You can use Polly to develop applications that increase engagement and accessibility."
   },
   {
     id: 61,
     service: "Lex",
+    category: "Machine Learning",
     description: "Conversational AI service. Helps you build chatbots and virtual assistants. Lex provides the advanced deep learning functionalities of automatic speech recognition (ASR) for converting speech to text."
   },
   {
     id: 62,
     service: "Translate",
+    category: "Machine Learning",
     description: "Neural machine translation service. Delivers fast, high-quality, and affordable language translation. Neural machine translation is a form of language translation automation that uses deep learning models."
   },
   {
     id: 63,
     service: "Transcribe",
+    category: "Machine Learning",
     description: "Automatic speech recognition service. Makes it easy for developers to add speech-to-text capability to their applications. Using the Amazon Transcribe API, you can analyze audio files stored in Amazon S3 and have the service return a text file of the transcribed speech."
   },
   {
     id: 64,
     service: "Textract",
+    category: "Machine Learning",
     description: "Document analysis service. Automatically extracts text, handwriting, and data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables."
   },
   {
     id: 65,
     service: "Forecast",
+    category: "Machine Learning",
     description: "Time series forecasting service. Uses machine learning to combine time series data with additional variables to build forecasts. Amazon Forecast requires no machine learning experience to get started."
   },
   {
     id: 66,
     service: "Personalize",
+    category: "Machine Learning",
     description: "Real-time recommendation service. Makes it easy for developers to create individualized recommendations for customers using their applications. You can use the same technology used by Amazon.com for real-time personalized recommendations."
   },
   {
     id: 67,
     service: "Fraud Detector",
+    category: "Machine Learning",
     description: "Fraud detection service. Makes it easy to identify potentially fraudulent online activities such as online payment fraud and the creation of fake accounts."
   },
   {
@@ -1045,27 +1056,31 @@ const awsServices = [
   {
     id: 119,
     service: "Panorama",
+    category: "Machine Learning",
     description: "Computer vision service for edge devices. Applies computer vision to video from on-premises cameras to make predictions locally with high accuracy and low latency."
   },
   {
     id: 120,
     service: "Lookout for Vision",
+    category: "Machine Learning",
     description: "Computer vision service for quality control. Uses machine learning to spot defects and anomalies in manufactured products using computer vision."
   },
   {
     id: 121,
     service: "Lookout for Equipment",
+    category: "Machine Learning",
     description: "Predictive maintenance service. Uses machine learning to detect abnormal equipment behavior by analyzing sensor data, enabling you to implement predictive maintenance and reduce unplanned downtime."
   },
   {
     id: 122,
     service: "Lookout for Metrics",
-    category: "Analytics",
+    category: "Machine Learning",
     description: "Anomaly detection service. Uses machine learning to detect anomalies in your metrics and help you identify the root cause of issues in your applications and infrastructure."
   },
   {
     id: 123,
     service: "Monitron",
+    category: "Machine Learning",
     description: "Predictive maintenance service. Uses sensors and machine learning to detect potential equipment failures so you can fix problems before they occur."
   },
   {
@@ -1234,6 +1249,80 @@ const awsServices = [
     service: "Amazon Q Developer",
     category: "Developer Tools",
     description: "AI-powered developer assistant. Helps developers write, test, and debug code more efficiently using generative AI capabilities."
+  },
+  
+  // Additional Machine Learning and AI Services
+  {
+    id: 153,
+    service: "Amazon Augmented AI",
+    category: "Machine Learning",
+    description: "Human review service. Makes it easy to implement human review of ML predictions for improving accuracy and building confidence in ML systems."
+  },
+  {
+    id: 154,
+    service: "Amazon Bedrock",
+    category: "Machine Learning",
+    description: "Foundation model service. Provides access to high-performing foundation models from leading AI companies through a unified API."
+  },
+  {
+    id: 155,
+    service: "Amazon CodeGuru",
+    category: "Machine Learning",
+    description: "ML-powered code review service. Uses machine learning to identify potential defects and suggest improvements in your code."
+  },
+  {
+    id: 156,
+    service: "Amazon Comprehend Medical",
+    category: "Machine Learning",
+    description: "Medical NLP service. Extracts medical information from unstructured text such as medical notes, reports, and patient records."
+  },
+  {
+    id: 157,
+    service: "Amazon DevOps Guru",
+    category: "Machine Learning",
+    description: "ML-powered operations service. Uses machine learning to detect operational issues and provide recommendations for remediation."
+  },
+  {
+    id: 158,
+    service: "Amazon Kendra",
+    category: "Machine Learning",
+    description: "Intelligent search service. Uses machine learning to provide highly accurate search results from your content and data."
+  },
+  {
+    id: 159,
+    service: "Amazon PartyRock",
+    category: "Machine Learning",
+    description: "AI-powered application builder. Enables developers to quickly build and deploy AI-powered applications using foundation models."
+  },
+  {
+    id: 160,
+    service: "Amazon Q",
+    category: "Machine Learning",
+    description: "Generative AI assistant. Provides conversational AI capabilities to help with various business tasks and questions."
+  },
+  {
+    id: 161,
+    service: "AWS DeepComposer",
+    category: "Machine Learning",
+    description: "ML-powered music composition service. Uses generative AI to help you compose original music using machine learning."
+  },
+  {
+    id: 162,
+    service: "AWS DeepRacer",
+    category: "Machine Learning",
+    description: "Autonomous racing service. Uses reinforcement learning to train autonomous racing cars in a 3D racing simulator."
+  },
+  {
+    id: 163,
+    service: "AWS HealthLake",
+    category: "Machine Learning",
+    description: "Healthcare data lake service. Uses machine learning to structure and search health data for analytics and insights."
+  },
+  {
+    id: 164,
+    service: "AWS HealthScribe",
+    category: "Machine Learning",
+    description: "Medical transcription service. Uses machine learning to automatically transcribe medical conversations and extract clinical information."
   }
 ];
 
