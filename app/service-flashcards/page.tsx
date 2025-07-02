@@ -390,6 +390,18 @@ const awsServices = [
     description: "Centralized backup service. Provides a fully managed backup service that makes it easy to centralize and automate the backup of data across AWS services in the cloud as well as on premises using the AWS Storage Gateway."
   },
   {
+    id: 108,
+    service: "Elastic Disaster Recovery",
+    category: "Storage",
+    description: "Disaster recovery service. Minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications. Previously known as CloudEndure Disaster Recovery."
+  },
+  {
+    id: 109,
+    service: "File Cache",
+    category: "Storage",
+    description: "High-speed cache on AWS. Provides a temporary, high-speed cache for your on-premises or cloud-based file data, enabling fast access to frequently used data sets."
+  },
+  {
     id: 1,
     service: "EC2 (Elastic Compute Cloud)",
     description: "Virtual servers in the cloud. Provides scalable computing capacity in the AWS cloud. You can launch as many or as few virtual servers as you need, configure security and networking, and manage storage."
@@ -967,100 +979,102 @@ const awsServices = [
   },
   {
     id: 108,
-    service: "CloudEndure Disaster Recovery",
-    description: "Disaster recovery service. Provides continuous replication of your physical, virtual, and cloud-based servers into a low-cost staging area in your target AWS account and preferred Region."
+    service: "Elastic Disaster Recovery",
+    category: "Storage",
+    description: "Disaster recovery service. Minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications. Previously known as CloudEndure Disaster Recovery."
   },
   {
     id: 109,
+    service: "File Cache",
+    category: "Storage",
+    description: "High-speed cache on AWS. Provides a temporary, high-speed cache for your on-premises or cloud-based file data, enabling fast access to frequently used data sets."
+  },
+  {
+    id: 110,
     service: "Application Migration Service",
     description: "Application migration service. Rehosts your applications without any code changes or cloud expertise required. It automatically converts your source servers to run natively on AWS."
   },
   {
-    id: 110,
+    id: 111,
     service: "Ground Station",
     description: "Satellite ground station service. Enables you to control satellite communications, process data, and scale your satellite operations quickly, easily, and cost-effectively without having to worry about building or managing your own ground station infrastructure."
   },
   {
-    id: 111,
+    id: 112,
     service: "IoT Core",
     description: "Managed cloud platform for IoT devices. Lets connected devices easily and securely interact with cloud applications and other devices. IoT Core can support billions of devices and trillions of messages."
   },
   {
-    id: 112,
+    id: 113,
     service: "IoT Device Management",
     description: "IoT device management service. Makes it easy to securely onboard, organize, monitor, and remotely manage IoT devices at scale."
   },
   {
-    id: 113,
+    id: 114,
     service: "IoT Analytics",
     category: "Analytics",
     description: "IoT analytics service. Makes it easy to run sophisticated analytics on massive volumes of IoT data without having to worry about all the typically undifferentiated heavy lifting involved in building an IoT analytics platform."
   },
   {
-    id: 114,
+    id: 115,
     service: "IoT Events",
     description: "IoT event detection service. Makes it easy to detect and respond to events from IoT sensors and applications. Events are patterns of data that identify more complex circumstances than expected."
   },
   {
-    id: 115,
+    id: 116,
     service: "IoT Greengrass",
     description: "Edge computing service. Extends AWS to edge devices so they can act locally on the data they generate, while still using the cloud for management, analytics, and durable storage."
   },
   {
-    id: 116,
+    id: 117,
     service: "FreeRTOS",
     description: "Real-time operating system for microcontrollers. Makes it easy to program, deploy, secure, connect, and manage small, low-power edge devices."
   },
   {
-    id: 117,
+    id: 118,
     service: "RoboMaker",
     description: "Robotics development service. Makes it easy to develop, test, and deploy intelligent robotics applications at scale. RoboMaker provides a fully-managed, scalable infrastructure for simulation."
   },
   {
-    id: 118,
+    id: 119,
     service: "Panorama",
     description: "Computer vision service for edge devices. Applies computer vision to video from on-premises cameras to make predictions locally with high accuracy and low latency."
   },
   {
-    id: 119,
+    id: 120,
     service: "Lookout for Vision",
     description: "Computer vision service for quality control. Uses machine learning to spot defects and anomalies in manufactured products using computer vision."
   },
   {
-    id: 120,
+    id: 121,
     service: "Lookout for Equipment",
     description: "Predictive maintenance service. Uses machine learning to detect abnormal equipment behavior by analyzing sensor data, enabling you to implement predictive maintenance and reduce unplanned downtime."
   },
   {
-    id: 121,
+    id: 122,
     service: "Lookout for Metrics",
     category: "Analytics",
     description: "Anomaly detection service. Uses machine learning to detect anomalies in your metrics and help you identify the root cause of issues in your applications and infrastructure."
   },
   {
-    id: 122,
+    id: 123,
     service: "Monitron",
     description: "Predictive maintenance service. Uses sensors and machine learning to detect potential equipment failures so you can fix problems before they occur."
   },
   {
-    id: 123,
+    id: 124,
     service: "AWS IoT TwinMaker",
     description: "Digital twin service. Makes it faster and easier to create digital twins of real-world systems like buildings, factories, industrial equipment, and production lines."
   },
   {
-    id: 124,
+    id: 125,
     service: "AWS IoT SiteWise",
     description: "Industrial data collection service. Collects, structures, and searches industrial data at scale to help you make better, data-driven decisions."
   },
   {
-    id: 125,
+    id: 126,
     service: "AWS IoT FleetWise",
     description: "Vehicle data collection service. Makes it easier to collect, transform, and transfer vehicle data to the cloud in near real-time."
-  },
-  {
-    id: 126,
-    service: "AWS Amplify",
-    description: "Full-stack development platform. Helps frontend web and mobile developers build full-stack applications, with the flexibility to leverage the breadth of AWS services as your use cases evolve."
   },
   {
     id: 127,
