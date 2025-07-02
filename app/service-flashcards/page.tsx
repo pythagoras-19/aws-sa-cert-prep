@@ -1396,6 +1396,32 @@ const awsServices = [
     service: "VMware Cloud on AWS",
     category: "Compute",
     description: "VMware cloud service. Enables you to run VMware workloads on AWS using the same VMware tools and skills you already know."
+  },
+  
+  // End User Computing Services
+  {
+    id: 173,
+    service: "Amazon AppStream 2.0",
+    category: "End User Computing",
+    description: "Fully managed application streaming service. Centrally manage desktop applications and securely deliver them to any computer. Scale to any number of users globally without provisioning hardware or infrastructure."
+  },
+  {
+    id: 174,
+    service: "Amazon WorkSpaces",
+    category: "End User Computing",
+    description: "Fully managed, secure cloud desktop service. Provision Windows or Linux desktops in minutes and scale to thousands of desktops globally. Pay monthly or hourly for launched WorkSpaces only."
+  },
+  {
+    id: 175,
+    service: "Amazon WorkSpaces Core",
+    category: "End User Computing",
+    description: "Cloud-based, fully managed virtual desktop infrastructure (VDI) accessible to third-party VDI management solutions. Simplify VDI migration and combine current VDI software with AWS security and reliability."
+  },
+  {
+    id: 176,
+    service: "Amazon WorkSpaces Thin Client",
+    category: "End User Computing",
+    description: "Cost-effective thin client device built to work with AWS End User Computing virtual desktops. Compact device designed to connect two monitors and multiple USB devices with enhanced endpoint security."
   }
 ];
 
