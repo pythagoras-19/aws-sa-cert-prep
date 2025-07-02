@@ -344,19 +344,19 @@ const awsServices = [
   {
     id: 42,
     service: "Transfer Family",
-    category: "Storage",
+    category: "Migration and Transfer",
     description: "Fully managed file transfer service. Enables you to transfer files over SFTP, FTPS, and FTP directly into and out of Amazon S3 or Amazon EFS."
   },
   {
     id: 43,
     service: "DataSync",
-    category: "Storage",
+    category: "Migration and Transfer",
     description: "Data transfer service. Simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services."
   },
   {
     id: 44,
     service: "Snow Family",
-    category: "Storage",
+    category: "Migration and Transfer",
     description: "Edge computing and data transfer devices. Includes Snowcone, Snowball, and Snowmobile for transferring data to and from AWS."
   },
   {
@@ -961,16 +961,19 @@ const awsServices = [
   {
     id: 98,
     service: "Migration Hub",
+    category: "Migration and Transfer",
     description: "Migration tracking service. Provides a single location to track the progress of application migrations across multiple AWS and partner solutions."
   },
   {
     id: 99,
     service: "Application Discovery Service",
+    category: "Migration and Transfer",
     description: "Application discovery service. Helps enterprise customers plan migration projects by gathering information about their on-premises data centers."
   },
   {
     id: 100,
     service: "Database Migration Service",
+    category: "Migration and Transfer",
     description: "Database migration service. Helps you migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database."
   },
   {
@@ -1023,6 +1026,7 @@ const awsServices = [
   {
     id: 110,
     service: "Application Migration Service",
+    category: "Migration and Transfer",
     description: "Application migration service. Rehosts your applications without any code changes or cloud expertise required. It automatically converts your source servers to run natively on AWS."
   },
   {
@@ -1376,6 +1380,14 @@ const awsServices = [
     service: "AWS User Notifications",
     category: "Management and Governance",
     description: "Notification management service. Provides a centralized way to manage and deliver notifications across AWS services and applications."
+  },
+  
+  // Additional Migration and Transfer Services
+  {
+    id: 171,
+    service: "AWS Mainframe Modernization Service",
+    category: "Migration and Transfer",
+    description: "Mainframe modernization service. Helps you migrate and modernize your mainframe applications to AWS. Provides tools and services to refactor, replatform, and rehost mainframe workloads."
   }
 ];
 
