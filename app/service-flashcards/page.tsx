@@ -4,6 +4,227 @@ import React, { useState } from 'react';
 import { RefreshCw, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const awsServices = [
+  // Compute Services
+  {
+    id: 1,
+    service: "EC2 (Elastic Compute Cloud)",
+    category: "Compute",
+    description: "Virtual servers in the cloud. Provides scalable computing capacity in the AWS cloud. You can launch as many or as few virtual servers as you need, configure security and networking, and manage storage."
+  },
+  {
+    id: 5,
+    service: "Lambda",
+    category: "Compute",
+    description: "Serverless compute service. Runs your code in response to events and automatically manages the underlying compute resources. You pay only for the compute time you consume."
+  },
+  {
+    id: 18,
+    service: "ECS (Elastic Container Service)",
+    category: "Compute",
+    description: "Fully managed container orchestration service. Supports Docker containers and allows you to easily run and scale containerized applications on AWS."
+  },
+  {
+    id: 19,
+    service: "EKS (Elastic Kubernetes Service)",
+    category: "Compute",
+    description: "Fully managed Kubernetes service. Makes it easy to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane."
+  },
+  {
+    id: 53,
+    service: "Batch",
+    category: "Compute",
+    description: "Fully managed batch processing. Enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS."
+  },
+  {
+    id: 127,
+    service: "AWS App Runner",
+    category: "Compute",
+    description: "Fully managed service for running containerized web applications and APIs. Automatically builds and deploys your application, load balances traffic, and scales to meet your traffic needs."
+  },
+  {
+    id: 135,
+    service: "AWS CloudShell",
+    category: "Compute",
+    description: "Browser-based shell environment. Provides a pre-authenticated AWS CLI that you can launch from the AWS Management Console and use to run scripts with the same permissions as your console user."
+  },
+  
+  // Additional Analytics Services
+  {
+    id: 136,
+    service: "Amazon CloudSearch",
+    category: "Analytics",
+    description: "Managed search service. Makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application."
+  },
+  {
+    id: 137,
+    service: "Amazon DataZone",
+    category: "Analytics",
+    description: "Data governance service. Helps you catalog, discover, share, and govern data at scale across organizational boundaries."
+  },
+  {
+    id: 138,
+    service: "Amazon FinSpace",
+    category: "Analytics",
+    description: "Financial data analytics service. Provides a complete data management and analytics solution for financial services organizations."
+  },
+  {
+    id: 139,
+    service: "Amazon Kinesis",
+    category: "Analytics",
+    description: "Real-time data streaming service. Collects, processes, and analyzes real-time, streaming data so you can get timely insights and react quickly to new information."
+  },
+  {
+    id: 140,
+    service: "Amazon Kinesis Data Firehose",
+    category: "Analytics",
+    description: "Real-time data delivery service. Captures, transforms, and delivers data streams to Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, and Splunk."
+  },
+  {
+    id: 141,
+    service: "Amazon Managed Service for Apache Flink",
+    category: "Analytics",
+    description: "Managed stream processing service. Makes it easy to run Apache Flink applications and SQL queries on streaming data."
+  },
+  {
+    id: 142,
+    service: "Amazon Kinesis Data Streams",
+    category: "Analytics",
+    description: "Real-time data streaming service. Builds custom applications that process or analyze streaming data for specialized needs."
+  },
+  {
+    id: 143,
+    service: "Amazon Kinesis Video Streams",
+    category: "Analytics",
+    description: "Video streaming service. Makes it easy to securely stream video from connected devices to AWS for analytics, machine learning, and other processing."
+  },
+  {
+    id: 144,
+    service: "Amazon OpenSearch Serverless",
+    category: "Analytics",
+    description: "Serverless search and analytics service. Automatically provisions and scales the underlying resources to power your search and analytics workloads."
+  },
+  {
+    id: 145,
+    service: "Amazon Redshift Serverless",
+    category: "Analytics",
+    description: "Serverless data warehouse service. Automatically provisions and scales data warehouse capacity to deliver fast performance for all your analytics workloads."
+  },
+  {
+    id: 146,
+    service: "AWS Clean Rooms",
+    category: "Analytics",
+    description: "Privacy-preserving data collaboration service. Enables multiple parties to collaborate on their collective data without sharing the underlying data with each other."
+  },
+  {
+    id: 147,
+    service: "AWS Data Exchange",
+    category: "Analytics",
+    description: "Data marketplace service. Makes it easy to find, subscribe to, and use third-party data in the cloud."
+  },
+  {
+    id: 148,
+    service: "AWS Data Pipeline",
+    category: "Analytics",
+    description: "Data workflow orchestration service. Helps you reliably process and move data between different AWS compute and storage services, as well as on-premises data sources."
+  },
+  {
+    id: 149,
+    service: "AWS Entity Resolution",
+    category: "Analytics",
+    description: "Entity resolution service. Helps you match and link related records from multiple sources to create a unified view of entities."
+  },
+  {
+    id: 150,
+    service: "AWS Lake Formation",
+    category: "Analytics",
+    description: "Data lake management service. Makes it easy to set up a secure data lake in days. A data lake is a centralized, curated, and secured repository that stores all your data, both in its original form and prepared for analysis."
+  },
+  {
+    id: 151,
+    service: "Amazon Managed Streaming for Apache Kafka",
+    category: "Analytics",
+    description: "Fully managed Apache Kafka service. Makes it easy to build and run applications that use Apache Kafka to process streaming data."
+  },
+  
+  // Storage Services
+  {
+    id: 2,
+    service: "S3 (Simple Storage Service)",
+    category: "Storage",
+    description: "Object storage service. Offers industry-leading scalability, data availability, security, and performance. Store and retrieve any amount of data from anywhere on the web."
+  },
+  {
+    id: 10,
+    service: "EBS (Elastic Block Store)",
+    category: "Storage",
+    description: "Block-level storage volumes. Provides persistent block storage volumes for use with EC2 instances. Each EBS volume is automatically replicated within its Availability Zone."
+  },
+  {
+    id: 39,
+    service: "S3 Glacier",
+    category: "Storage",
+    description: "Low-cost storage for data archiving. Secure, durable, and extremely low-cost cloud storage service for data archiving and long-term backup."
+  },
+  {
+    id: 40,
+    service: "EFS (Elastic File System)",
+    category: "Storage",
+    description: "Fully managed file system. Provides simple, scalable, elastic file storage for use with AWS Cloud services and on-premises resources."
+  },
+  {
+    id: 41,
+    service: "Storage Gateway",
+    category: "Storage",
+    description: "Hybrid cloud storage service. Enables your on-premises applications to seamlessly use AWS cloud storage. You can use the service for backup and archiving, disaster recovery, cloud data processing, storage tiering, and migration."
+  },
+  {
+    id: 42,
+    service: "Transfer Family",
+    category: "Storage",
+    description: "Fully managed file transfer service. Enables you to transfer files over SFTP, FTPS, and FTP directly into and out of Amazon S3 or Amazon EFS."
+  },
+  {
+    id: 43,
+    service: "DataSync",
+    category: "Storage",
+    description: "Data transfer service. Simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services."
+  },
+  {
+    id: 44,
+    service: "Snow Family",
+    category: "Storage",
+    description: "Edge computing and data transfer devices. Includes Snowcone, Snowball, and Snowmobile for transferring data to and from AWS."
+  },
+  {
+    id: 103,
+    service: "FSx for Windows File Server",
+    category: "Storage",
+    description: "Fully managed Windows file system. Built on Windows Server, providing a fully managed native Microsoft Windows file system accessible over the industry-standard Server Message Block (SMB) protocol."
+  },
+  {
+    id: 104,
+    service: "FSx for Lustre",
+    category: "Storage",
+    description: "High-performance file system. Built for compute-intensive workloads, such as high-performance computing, machine learning, and media data processing workflows."
+  },
+  {
+    id: 105,
+    service: "FSx for NetApp ONTAP",
+    category: "Storage",
+    description: "Fully managed NetApp ONTAP file system. Provides the popular features, performance, and APIs of ONTAP file systems with the agility, scalability, security, and resiliency of AWS."
+  },
+  {
+    id: 106,
+    service: "FSx for OpenZFS",
+    category: "Storage",
+    description: "Fully managed OpenZFS file system. Provides the familiar features, performance, and APIs of OpenZFS file systems with the agility, scalability, security, and resiliency of AWS."
+  },
+  {
+    id: 107,
+    service: "Backup",
+    category: "Storage",
+    description: "Centralized backup service. Provides a fully managed backup service that makes it easy to centralize and automate the backup of data across AWS services in the cloud as well as on premises using the AWS Storage Gateway."
+  },
   {
     id: 1,
     service: "EC2 (Elastic Compute Cloud)",
@@ -17,11 +238,13 @@ const awsServices = [
   {
     id: 3,
     service: "VPC (Virtual Private Cloud)",
+    category: "Networking",
     description: "Isolated cloud resources. Provides a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define."
   },
   {
     id: 4,
     service: "RDS (Relational Database Service)",
+    category: "Database",
     description: "Managed relational database service. Makes it easy to set up, operate, and scale relational databases in the cloud. Supports multiple database engines."
   },
   {
@@ -32,16 +255,19 @@ const awsServices = [
   {
     id: 6,
     service: "Route 53",
+    category: "Networking",
     description: "Scalable DNS and domain name registration. Highly available and scalable cloud DNS web service designed to give developers and businesses an extremely reliable and cost-effective way to route end users to internet applications."
   },
   {
     id: 7,
     service: "CloudFront",
+    category: "Networking",
     description: "Content delivery network (CDN). Delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment."
   },
   {
     id: 8,
     service: "ELB (Elastic Load Balancer)",
+    category: "Networking",
     description: "Distributes incoming application traffic. Automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses."
   },
   {
@@ -57,6 +283,7 @@ const awsServices = [
   {
     id: 11,
     service: "CloudWatch",
+    category: "Analytics",
     description: "Monitoring and observability service. Provides data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization."
   },
   {
@@ -82,11 +309,13 @@ const awsServices = [
   {
     id: 16,
     service: "DynamoDB",
+    category: "Database",
     description: "Fully managed NoSQL database service. Provides fast and predictable performance with seamless scalability. You can use DynamoDB to create a database table that can store and retrieve any amount of data."
   },
   {
     id: 17,
     service: "ElastiCache",
+    category: "Database",
     description: "In-memory data store and cache service. Supports Redis and Memcached. Improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory data stores."
   },
   {
@@ -147,31 +376,37 @@ const awsServices = [
   {
     id: 29,
     service: "X-Ray",
+    category: "Analytics",
     description: "Distributed tracing service. Helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture."
   },
   {
     id: 30,
     service: "Glue",
+    category: "Analytics",
     description: "ETL (extract, transform, and load) service. Makes it easy to move data between data stores. It's a fully managed ETL service that makes it simple and cost-effective to categorize your data, clean it, enrich it, and move it reliably between various data stores."
   },
   {
     id: 31,
     service: "Redshift",
+    category: "Database",
     description: "Fully managed data warehouse service. Makes it simple and cost-effective to analyze all your data using standard SQL and your existing business intelligence tools."
   },
   {
     id: 32,
     service: "Aurora",
+    category: "Database",
     description: "MySQL and PostgreSQL-compatible relational database. Built for the cloud, Aurora combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
   },
   {
     id: 33,
     service: "Neptune",
+    category: "Database",
     description: "Fully managed graph database service. Makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's RDF."
   },
   {
     id: 34,
     service: "DocumentDB",
+    category: "Database",
     description: "MongoDB-compatible document database service. Designed from the ground up to give you the performance, scalability, and availability you need when operating mission-critical MongoDB workloads at scale."
   },
   {
@@ -192,6 +427,7 @@ const awsServices = [
   {
     id: 38,
     service: "OpenSearch Service",
+    category: "Analytics",
     description: "Managed OpenSearch service. Makes it easy to deploy, secure, and operate OpenSearch at scale with zero down time."
   },
   {
@@ -272,16 +508,19 @@ const awsServices = [
   {
     id: 54,
     service: "EMR (Elastic MapReduce)",
+    category: "Analytics",
     description: "Big data platform. Makes it easy, fast, and cost-effective to process vast amounts of data across dynamically scalable Amazon EC2 instances."
   },
   {
     id: 55,
     service: "Athena",
+    category: "Analytics",
     description: "Interactive query service. Makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage."
   },
   {
     id: 56,
     service: "QuickSight",
+    category: "Analytics",
     description: "Business intelligence service. Delivers easy-to-understand insights to the people who need them. You can create and publish interactive dashboards that include ML-powered insights."
   },
   {
@@ -567,6 +806,7 @@ const awsServices = [
   {
     id: 113,
     service: "IoT Analytics",
+    category: "Analytics",
     description: "IoT analytics service. Makes it easy to run sophisticated analytics on massive volumes of IoT data without having to worry about all the typically undifferentiated heavy lifting involved in building an IoT analytics platform."
   },
   {
@@ -607,6 +847,7 @@ const awsServices = [
   {
     id: 121,
     service: "Lookout for Metrics",
+    category: "Analytics",
     description: "Anomaly detection service. Uses machine learning to detect anomalies in your metrics and help you identify the root cause of issues in your applications and infrastructure."
   },
   {
@@ -694,30 +935,77 @@ export default function ServiceFlashcardsPage() {
   const [cards, setCards] = useState(awsServices);
   const [current, setCurrent] = useState(0);
   const [showDescription, setShowDescription] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  
+  // Get unique categories
+  const categories = ['All', ...Array.from(new Set(awsServices.map(service => service.category || 'Other')))];
+  
+  // Filter cards by category
+  const filteredCards = selectedCategory === 'All' 
+    ? cards 
+    : cards.filter(card => (card.category || 'Other') === selectedCategory);
 
   const handleRandomize = () => {
-    setCards(shuffle(cards));
+    setCards(shuffle(filteredCards));
     setCurrent(0);
     setShowDescription(false);
   };
 
   const next = () => {
-    setCurrent(c => (c + 1 < cards.length ? c + 1 : 0));
+    setCurrent(c => (c + 1 < filteredCards.length ? c + 1 : 0));
     setShowDescription(false);
   };
   
   const prev = () => {
-    setCurrent(c => (c - 1 >= 0 ? c - 1 : cards.length - 1));
+    setCurrent(c => (c - 1 >= 0 ? c - 1 : filteredCards.length - 1));
     setShowDescription(false);
   };
 
-  const card = cards[current];
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrent(0);
+    setShowDescription(false);
+  };
+
+  const card = filteredCards[current] || filteredCards[0];
+
+  if (!card) {
+    return (
+      <div className="max-w-4xl mx-auto py-8 px-4">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-4">AWS Service Flashcards</h1>
+          <p className="text-gray-600">No services found for the selected category.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-4">AWS Service Flashcards</h1>
         <p className="text-gray-600 mb-4">Learn what each AWS service does</p>
+        
+        {/* Category Selector */}
+        <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-2">Filter by Category:</label>
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                  selectedCategory === category
+                    ? 'bg-aws-orange text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+        
         <button
           className="inline-flex items-center px-4 py-2 rounded-lg border bg-white text-gray-800 hover:bg-gray-100 transition-colors"
           onClick={handleRandomize}
@@ -730,7 +1018,9 @@ export default function ServiceFlashcardsPage() {
       <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
         {/* Progress */}
         <div className="text-center mb-6">
-          <span className="text-sm text-gray-500">{current + 1} of {cards.length}</span>
+          <span className="text-sm text-gray-500">
+            {current + 1} of {filteredCards.length} {selectedCategory !== 'All' && `(${selectedCategory})`}
+          </span>
         </div>
 
         {/* Flashcard */}
