@@ -146,6 +146,170 @@ const awsServices = [
     description: "Fully managed Apache Kafka service. Makes it easy to build and run applications that use Apache Kafka to process streaming data."
   },
   
+  // Application Integration Services
+  {
+    id: 152,
+    service: "Amazon AppFlow",
+    category: "Application Integration",
+    description: "Fully managed integration service. Enables you to securely transfer data between SaaS applications and AWS services without writing custom integration code."
+  },
+  {
+    id: 153,
+    service: "AWS B2B Data Interchange",
+    category: "Application Integration",
+    description: "Business-to-business data exchange service. Helps you transform and exchange EDI (Electronic Data Interchange) documents with trading partners."
+  },
+  {
+    id: 154,
+    service: "Amazon Managed Workflows for Apache Airflow (MWAA)",
+    category: "Application Integration",
+    description: "Managed Apache Airflow service. Makes it easy to set up and operate end-to-end data pipelines in the cloud using Apache Airflow."
+  },
+  {
+    id: 155,
+    service: "Amazon MQ",
+    category: "Application Integration",
+    description: "Managed message broker service. Provides Apache ActiveMQ and RabbitMQ for message brokers that help you move from legacy message brokers to the cloud."
+  },
+  
+  // Business Applications Services
+  {
+    id: 156,
+    service: "Alexa for Business",
+    category: "Business Applications",
+    description: "Voice-enabled business productivity service. Makes Alexa available for your organization to help you and your team get more done."
+  },
+  {
+    id: 157,
+    service: "AWS AppFabric",
+    category: "Business Applications",
+    description: "Application integration service. Connects your SaaS applications to provide a unified view of your data and enable cross-application workflows."
+  },
+  {
+    id: 158,
+    service: "Amazon Chime",
+    category: "Business Applications",
+    description: "Communications service. Provides voice, video, and chat capabilities for your organization with a single, secure application."
+  },
+  {
+    id: 159,
+    service: "Amazon Chime SDK",
+    category: "Business Applications",
+    description: "Real-time communications SDK. Enables you to add voice, video, and messaging capabilities to your web and mobile applications."
+  },
+  {
+    id: 160,
+    service: "Amazon Connect",
+    category: "Business Applications",
+    description: "Cloud contact center service. Makes it easy for any business to deliver better customer service at a lower cost."
+  },
+  {
+    id: 161,
+    service: "Amazon Pinpoint",
+    category: "Business Applications",
+    description: "Multichannel marketing and engagement service. Helps you understand your users and engage with them across multiple messaging channels."
+  },
+  {
+    id: 162,
+    service: "Amazon SES",
+    category: "Business Applications",
+    description: "Email service. Enables you to send and receive email using a reliable and scalable email platform."
+  },
+  {
+    id: 163,
+    service: "Amazon WorkDocs",
+    category: "Business Applications",
+    description: "Fully managed, secure enterprise storage and sharing service. Enables you to create, edit, and share content with your team."
+  },
+  {
+    id: 164,
+    service: "Amazon WorkMail",
+    category: "Business Applications",
+    description: "Secure, managed business email and calendar service. Gives users the ability to seamlessly access their email, contacts, and calendar using the email client they already know and love."
+  },
+  
+  // Cloud Financial Management Services
+  {
+    id: 165,
+    service: "AWS Application Cost Profiler",
+    category: "Cloud Financial Management",
+    description: "Application cost optimization service. Helps you identify cost optimization opportunities for your applications by providing detailed cost breakdowns and recommendations."
+  },
+  {
+    id: 166,
+    service: "AWS Billing Conductor",
+    category: "Cloud Financial Management",
+    description: "Billing management service. Helps you customize your AWS billing experience and manage billing for multiple AWS accounts and services."
+  },
+  {
+    id: 167,
+    service: "AWS Cost and Usage Report",
+    category: "Cloud Financial Management",
+    description: "Detailed billing report service. Provides comprehensive billing data that you can use to analyze your AWS costs and usage patterns."
+  },
+  {
+    id: 168,
+    service: "Reserved Instance (RI) Reporting",
+    category: "Cloud Financial Management",
+    description: "Reserved Instance optimization service. Provides detailed reporting and recommendations to help you optimize your Reserved Instance purchases and usage."
+  },
+  {
+    id: 169,
+    service: "Savings Plans",
+    category: "Cloud Financial Management",
+    description: "Flexible pricing model. Provides significant savings on your AWS usage in exchange for a commitment to use a specific amount of compute power for a 1 or 3-year term."
+  },
+  
+  // Additional Compute Services
+  {
+    id: 170,
+    service: "Amazon EC2 Image Builder",
+    category: "Compute",
+    description: "Automated image building service. Simplifies the creation, maintenance, validation, testing, and distribution of Linux or Windows images."
+  },
+  {
+    id: 171,
+    service: "Amazon Lightsail",
+    category: "Compute",
+    description: "Virtual private server service. Provides easy-to-use virtual private server (VPS) instances, containers, databases, and more at a cost-effective monthly price."
+  },
+  {
+    id: 172,
+    service: "Amazon Linux 2023",
+    category: "Compute",
+    description: "AWS-optimized Linux distribution. Provides a secure, stable, and high-performance execution environment for applications running on Amazon EC2."
+  },
+  {
+    id: 173,
+    service: "AWS Elastic Beanstalk",
+    category: "Compute",
+    description: "Platform as a service (PaaS). Makes it easy to deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those applications."
+  },
+  {
+    id: 174,
+    service: "AWS Fargate",
+    category: "Compute",
+    description: "Serverless compute engine for containers. Allows you to run containers without having to manage servers or clusters of Amazon EC2 instances."
+  },
+  {
+    id: 175,
+    service: "AWS Serverless Application Repository",
+    category: "Compute",
+    description: "Managed repository for serverless applications. Makes it easy for developers and enterprise teams to store, share, and deploy serverless applications."
+  },
+  {
+    id: 176,
+    service: "AWS Outposts",
+    category: "Compute",
+    description: "Hybrid cloud service. Extends AWS infrastructure, services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility."
+  },
+  {
+    id: 177,
+    service: "AWS Wavelength",
+    category: "Compute",
+    description: "Edge computing service. Provides mobile edge computing infrastructure for developing, deploying, and scaling ultra-low-latency applications."
+  },
+  
   // Storage Services
   {
     id: 2,
@@ -273,6 +437,7 @@ const awsServices = [
   {
     id: 9,
     service: "Auto Scaling",
+    category: "Compute",
     description: "Automatically adjusts capacity. Maintains application availability and allows you to scale your EC2 capacity up or down automatically according to conditions you define."
   },
   {
@@ -294,16 +459,19 @@ const awsServices = [
   {
     id: 13,
     service: "SNS (Simple Notification Service)",
+    category: "Application Integration",
     description: "Fully managed pub/sub messaging service. Enables you to decouple microservices, distributed systems, and serverless applications. SNS provides topics for high-throughput, push-based, many-to-many messaging."
   },
   {
     id: 14,
     service: "SQS (Simple Queue Service)",
+    category: "Application Integration",
     description: "Fully managed message queuing service. Enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS eliminates the complexity and overhead associated with managing and operating message-oriented middleware."
   },
   {
     id: 15,
     service: "API Gateway",
+    category: "Application Integration",
     description: "Fully managed service for creating and managing APIs. Makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale."
   },
   {
@@ -488,16 +656,19 @@ const awsServices = [
   {
     id: 50,
     service: "EventBridge",
+    category: "Application Integration",
     description: "Serverless event bus. Makes it easy to connect application components using real-time data streams. EventBridge delivers a stream of real-time data from your own applications, SaaS applications, and AWS services to targets such as AWS Lambda functions, HTTP invocation endpoints, and more."
   },
   {
     id: 51,
     service: "Step Functions",
+    category: "Application Integration",
     description: "Serverless workflow service. Makes it easy to coordinate the components of distributed applications and microservices using visual workflows."
   },
   {
     id: 52,
     service: "SWF (Simple Workflow Service)",
+    category: "Application Integration",
     description: "Workflow service for coordinating application components. Helps developers build, run, and scale background jobs that have parallel or sequential steps."
   },
   {
@@ -696,11 +867,13 @@ const awsServices = [
   {
     id: 91,
     service: "Cost Explorer",
+    category: "Cloud Financial Management",
     description: "Cost analysis service. Enables you to visualize, understand, and manage your AWS costs and usage over time. Cost Explorer provides reports that help you identify cost drivers and usage trends."
   },
   {
     id: 92,
     service: "Budgets",
+    category: "Cloud Financial Management",
     description: "Cost management service. Gives you the ability to set custom budgets that alert you when your costs or usage exceed (or are forecasted to exceed) your budgeted amount."
   },
   {
