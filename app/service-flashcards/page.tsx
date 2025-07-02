@@ -628,6 +628,56 @@ const awsServices = [
     id: 125,
     service: "AWS IoT FleetWise",
     description: "Vehicle data collection service. Makes it easier to collect, transform, and transfer vehicle data to the cloud in near real-time."
+  },
+  {
+    id: 126,
+    service: "AWS Amplify",
+    description: "Full-stack development platform. Helps frontend web and mobile developers build full-stack applications, with the flexibility to leverage the breadth of AWS services as your use cases evolve."
+  },
+  {
+    id: 127,
+    service: "AWS App Runner",
+    description: "Fully managed service for running containerized web applications and APIs. Automatically builds and deploys your application, load balances traffic, and scales to meet your traffic needs."
+  },
+  {
+    id: 128,
+    service: "AWS Proton",
+    description: "Application delivery service. Provides application templates, automated deployments, and infrastructure provisioning for container and serverless applications."
+  },
+  {
+    id: 129,
+    service: "AWS AppConfig",
+    description: "Feature flags and dynamic configuration service. Enables you to quickly deploy application configuration changes to your applications hosted on AWS or on-premises."
+  },
+  {
+    id: 130,
+    service: "AWS Fault Injection Simulator",
+    description: "Chaos engineering service. Helps you improve your application's performance, observability, and resiliency by performing controlled experiments on your AWS resources."
+  },
+  {
+    id: 131,
+    service: "AWS Resilience Hub",
+    description: "Resilience assessment service. Provides a single place to define, validate, and track the resilience of your applications so you can avoid unnecessary downtime caused by software, infrastructure, or operational disruptions."
+  },
+  {
+    id: 132,
+    service: "AWS Application Composer",
+    description: "Visual application builder. Helps you quickly compose and configure event-driven applications using a visual canvas and deploy them to AWS."
+  },
+  {
+    id: 133,
+    service: "AWS Launch Wizard",
+    description: "Application deployment service. Helps you size, configure, and deploy third-party applications on AWS without having to identify and provision individual AWS resources."
+  },
+  {
+    id: 134,
+    service: "AWS Service Catalog AppRegistry",
+    description: "Application resource management service. Helps you manage application metadata and resources across your organization to maintain consistency and improve operational efficiency."
+  },
+  {
+    id: 135,
+    service: "AWS CloudShell",
+    description: "Browser-based shell environment. Provides a pre-authenticated AWS CLI that you can launch from the AWS Management Console and use to run scripts with the same permissions as your console user."
   }
 ];
 
