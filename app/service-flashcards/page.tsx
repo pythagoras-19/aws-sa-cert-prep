@@ -1388,6 +1388,14 @@ const awsServices = [
     service: "AWS Mainframe Modernization Service",
     category: "Migration and Transfer",
     description: "Mainframe modernization service. Helps you migrate and modernize your mainframe applications to AWS. Provides tools and services to refactor, replatform, and rehost mainframe workloads."
+  },
+  
+  // Additional Compute Services
+  {
+    id: 172,
+    service: "VMware Cloud on AWS",
+    category: "Compute",
+    description: "VMware cloud service. Enables you to run VMware workloads on AWS using the same VMware tools and skills you already know."
   }
 ];
 
