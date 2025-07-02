@@ -449,7 +449,7 @@ const awsServices = [
   {
     id: 9,
     service: "Auto Scaling",
-    category: "Compute",
+    category: "Management and Governance",
     description: "Automatically adjusts capacity. Maintains application availability and allows you to scale your EC2 capacity up or down automatically according to conditions you define."
   },
   {
@@ -460,7 +460,7 @@ const awsServices = [
   {
     id: 11,
     service: "CloudWatch",
-    category: "Analytics",
+    category: "Management and Governance",
     description: "Monitoring and observability service. Provides data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization."
   },
   {
@@ -512,6 +512,7 @@ const awsServices = [
   {
     id: 20,
     service: "CloudFormation",
+    category: "Management and Governance",
     description: "Infrastructure as code service. Gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion."
   },
   {
@@ -553,11 +554,13 @@ const awsServices = [
   {
     id: 27,
     service: "Config",
+    category: "Management and Governance",
     description: "Configuration management service. Continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations."
   },
   {
     id: 28,
     service: "CloudTrail",
+    category: "Management and Governance",
     description: "API logging service. Enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity."
   },
   {
@@ -812,31 +815,37 @@ const awsServices = [
   {
     id: 73,
     service: "Systems Manager",
+    category: "Management and Governance",
     description: "Operations management service. Helps you automatically collect software inventory, apply OS patches, create system images, and configure Windows and Linux operating systems."
   },
   {
     id: 74,
     service: "OpsWorks",
+    category: "Management and Governance",
     description: "Configuration management service. Provides managed instances of Chef and Puppet. Chef and Puppet are automation platforms that allow you to use code to automate the configurations of your servers."
   },
   {
     id: 75,
     service: "Organizations",
+    category: "Management and Governance",
     description: "Account management service. Helps you centrally manage and govern multiple AWS accounts as you grow and scale your AWS resources."
   },
   {
     id: 76,
     service: "Control Tower",
+    category: "Management and Governance",
     description: "Multi-account governance service. Provides the easiest way to set up and govern a secure, multi-account AWS environment based on AWS best practices."
   },
   {
     id: 77,
     service: "Service Catalog",
+    category: "Management and Governance",
     description: "Application portfolio management service. Helps organizations create and manage catalogs of approved products that are available for deployment on AWS."
   },
   {
     id: 78,
     service: "License Manager",
+    category: "Management and Governance",
     description: "Software license management service. Makes it easier to manage your software licenses from software vendors such as Microsoft, SAP, Oracle, and IBM across AWS and on-premises environments."
   },
   {
@@ -923,6 +932,7 @@ const awsServices = [
   {
     id: 93,
     service: "Trusted Advisor",
+    category: "Management and Governance",
     description: "AWS account optimization service. Inspects your AWS environment and provides real-time guidance to help you provision your resources following AWS best practices."
   },
   {
@@ -933,16 +943,19 @@ const awsServices = [
   {
     id: 95,
     service: "Health Dashboard",
+    category: "Management and Governance",
     description: "Service health monitoring. Provides ongoing visibility into your service health and gives you detailed visibility into how AWS performs in your account."
   },
   {
     id: 96,
     service: "Personal Health Dashboard",
+    category: "Management and Governance",
     description: "Personalized health monitoring. Provides alerts and remediation guidance when AWS is experiencing events that may impact you."
   },
   {
     id: 97,
     service: "Well-Architected Tool",
+    category: "Management and Governance",
     description: "Architecture review service. Helps you review the state of your workloads and compares them to the latest AWS architectural best practices."
   },
   {
@@ -1106,6 +1119,7 @@ const awsServices = [
   {
     id: 128,
     service: "AWS Proton",
+    category: "Management and Governance",
     description: "Application delivery service. Provides application templates, automated deployments, and infrastructure provisioning for container and serverless applications."
   },
   {
@@ -1132,6 +1146,7 @@ const awsServices = [
   {
     id: 133,
     service: "AWS Launch Wizard",
+    category: "Management and Governance",
     description: "Application deployment service. Helps you size, configure, and deploy third-party applications on AWS without having to identify and provision individual AWS resources."
   },
   {
@@ -1323,6 +1338,44 @@ const awsServices = [
     service: "AWS HealthScribe",
     category: "Machine Learning",
     description: "Medical transcription service. Uses machine learning to automatically transcribe medical conversations and extract clinical information."
+  },
+  
+  // Additional Management and Governance Services
+  {
+    id: 165,
+    service: "AWS Compute Optimizer",
+    category: "Management and Governance",
+    description: "Resource optimization service. Analyzes your AWS resource usage and provides recommendations to reduce costs and improve performance."
+  },
+  {
+    id: 166,
+    service: "AWS Console Mobile Application",
+    category: "Management and Governance",
+    description: "Mobile AWS management app. Provides a mobile interface for managing your AWS resources, monitoring services, and responding to alerts."
+  },
+  {
+    id: 167,
+    service: "Amazon Managed Grafana",
+    category: "Management and Governance",
+    description: "Managed Grafana service. Provides a fully managed Grafana environment for visualizing and analyzing metrics, logs, and traces."
+  },
+  {
+    id: 168,
+    service: "Amazon Managed Service for Prometheus",
+    category: "Management and Governance",
+    description: "Managed Prometheus service. Provides a fully managed Prometheus-compatible monitoring service for containerized applications."
+  },
+  {
+    id: 169,
+    service: "Amazon Q Developer in chat applications",
+    category: "Management and Governance",
+    description: "AI-powered chat assistant. Provides conversational AI capabilities for developers to get help with AWS services and best practices."
+  },
+  {
+    id: 170,
+    service: "AWS User Notifications",
+    category: "Management and Governance",
+    description: "Notification management service. Provides a centralized way to manage and deliver notifications across AWS services and applications."
   }
 ];
 
