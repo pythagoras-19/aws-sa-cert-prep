@@ -44,7 +44,7 @@ const awsServices = [
   {
     id: 135,
     service: "AWS CloudShell",
-    category: "Compute",
+    category: "Developer Tools",
     description: "Browser-based shell environment. Provides a pre-authenticated AWS CLI that you can launch from the AWS Management Console and use to run scripts with the same permissions as your console user."
   },
   
@@ -517,11 +517,13 @@ const awsServices = [
   {
     id: 21,
     service: "CodeDeploy",
+    category: "Developer Tools",
     description: "Automated deployment service. Automates software deployments to a variety of compute services such as EC2, Lambda, and on-premises servers."
   },
   {
     id: 22,
     service: "CodePipeline",
+    category: "Developer Tools",
     description: "Continuous delivery service. Automates the build, test, and deploy phases of your release process every time there is a code change."
   },
   {
@@ -561,7 +563,7 @@ const awsServices = [
   {
     id: 29,
     service: "X-Ray",
-    category: "Analytics",
+    category: "Developer Tools",
     description: "Distributed tracing service. Helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture."
   },
   {
@@ -769,26 +771,31 @@ const awsServices = [
   {
     id: 68,
     service: "CodeBuild",
+    category: "Developer Tools",
     description: "Fully managed build service. Compiles source code, runs tests, and produces software packages that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own build servers."
   },
   {
     id: 69,
     service: "CodeCommit",
+    category: "Developer Tools",
     description: "Fully managed source control service. Hosts secure Git-based repositories. CodeCommit eliminates the need to operate your own source control system or worry about scaling its infrastructure."
   },
   {
     id: 70,
     service: "CodeArtifact",
+    category: "Developer Tools",
     description: "Fully managed artifact repository service. Makes it easy for organizations of any size to securely store, publish, and share software packages used in their software development process."
   },
   {
     id: 71,
     service: "CodeStar",
+    category: "Developer Tools",
     description: "Cloud-based development service. Provides the tools you need to quickly develop, build, and deploy applications on AWS. With AWS CodeStar, you can use a variety of project templates to start your project."
   },
   {
     id: 72,
     service: "Cloud9",
+    category: "Developer Tools",
     description: "Cloud-based integrated development environment (IDE). Write, run, and debug your code with just a browser. It includes a terminal, a code editor, and a debugger."
   },
   {
@@ -1094,6 +1101,7 @@ const awsServices = [
   {
     id: 130,
     service: "AWS Fault Injection Simulator",
+    category: "Developer Tools",
     description: "Chaos engineering service. Helps you improve your application's performance, observability, and resiliency by performing controlled experiments on your AWS resources."
   },
   {
@@ -1200,6 +1208,32 @@ const awsServices = [
     service: "Red Hat OpenShift Service on AWS",
     category: "Containers",
     description: "Managed OpenShift service. Provides a fully managed Red Hat OpenShift service on AWS, making it easy to run containerized applications."
+  },
+  
+  // Additional Developer Tools
+  {
+    id: 149,
+    service: "AWS Infrastructure Composer",
+    category: "Developer Tools",
+    description: "Visual infrastructure design service. Helps you design and visualize your AWS infrastructure using a drag-and-drop interface."
+  },
+  {
+    id: 150,
+    service: "Amazon CodeCatalyst",
+    category: "Developer Tools",
+    description: "Software development service. Provides a unified development experience for building, testing, and deploying applications on AWS."
+  },
+  {
+    id: 151,
+    service: "Amazon Corretto",
+    category: "Developer Tools",
+    description: "OpenJDK distribution. Provides a no-cost, multiplatform, production-ready distribution of OpenJDK for developing and running Java applications."
+  },
+  {
+    id: 152,
+    service: "Amazon Q Developer",
+    category: "Developer Tools",
+    description: "AI-powered developer assistant. Helps developers write, test, and debug code more efficiently using generative AI capabilities."
   }
 ];
 
