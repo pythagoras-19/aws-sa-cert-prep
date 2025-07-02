@@ -454,6 +454,7 @@ const awsServices = [
   {
     id: 12,
     service: "IAM (Identity and Access Management)",
+    category: "Security, Identity, and Compliance",
     description: "Security service for access control. Helps you securely control access to AWS resources. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources."
   },
   {
@@ -514,21 +515,25 @@ const awsServices = [
   {
     id: 23,
     service: "KMS (Key Management Service)",
+    category: "Security, Identity, and Compliance",
     description: "Managed encryption key service. Makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications."
   },
   {
     id: 24,
     service: "WAF (Web Application Firewall)",
+    category: "Security, Identity, and Compliance",
     description: "Web application firewall service. Helps protect your web applications or APIs against common web exploits that could affect application availability, compromise security, or consume excessive resources."
   },
   {
     id: 25,
     service: "Shield",
+    category: "Security, Identity, and Compliance",
     description: "DDoS protection service. Provides protection against DDoS attacks for applications running on AWS. Shield Standard is automatically included at no additional cost."
   },
   {
     id: 26,
     service: "GuardDuty",
+    category: "Security, Identity, and Compliance",
     description: "Threat detection service. Continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads."
   },
   {
@@ -812,41 +817,49 @@ const awsServices = [
   {
     id: 80,
     service: "Certificate Manager",
+    category: "Security, Identity, and Compliance",
     description: "SSL/TLS certificate management service. Provision, manage, and deploy public and private SSL/TLS certificates for use with AWS services and your internal connected resources."
   },
   {
     id: 81,
     service: "Artifact",
+    category: "Security, Identity, and Compliance",
     description: "Compliance documentation service. Provides on-demand access to AWS' security and compliance reports and select online agreements."
   },
   {
     id: 82,
     service: "Macie",
+    category: "Security, Identity, and Compliance",
     description: "Data security and privacy service. Uses machine learning and pattern matching to discover and help protect your sensitive data stored in AWS."
   },
   {
     id: 83,
     service: "Detective",
+    category: "Security, Identity, and Compliance",
     description: "Security investigation service. Automatically analyzes, investigates, and quickly identifies the root cause of potential security issues or suspicious activities."
   },
   {
     id: 84,
     service: "Inspector",
+    category: "Security, Identity, and Compliance",
     description: "Security assessment service. Automatically assesses applications for exposure, vulnerabilities, and deviations from best practices."
   },
   {
     id: 85,
     service: "Security Hub",
+    category: "Security, Identity, and Compliance",
     description: "Security findings aggregation service. Provides a comprehensive view of your high-priority security alerts and compliance status across AWS accounts."
   },
   {
     id: 86,
     service: "Cognito",
+    category: "Security, Identity, and Compliance",
     description: "User authentication and authorization service. Provides authentication, authorization, and user management for your web and mobile apps."
   },
   {
     id: 87,
     service: "Directory Service",
+    category: "Security, Identity, and Compliance",
     description: "Managed directory service. Enables you to run Microsoft Active Directory (AD) as a managed service. AWS Directory Service for Microsoft Active Directory, also known as AWS Managed Microsoft AD, is powered by Windows Server 2012 R2."
   },
   {
@@ -857,6 +870,7 @@ const awsServices = [
   {
     id: 89,
     service: "CloudHSM",
+    category: "Security, Identity, and Compliance",
     description: "Hardware security module service. Helps you meet corporate, contractual, and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS Cloud."
   },
   {
@@ -1092,6 +1106,66 @@ const awsServices = [
     id: 135,
     service: "AWS CloudShell",
     description: "Browser-based shell environment. Provides a pre-authenticated AWS CLI that you can launch from the AWS Management Console and use to run scripts with the same permissions as your console user."
+  },
+  {
+    id: 136,
+    service: "AWS Network Firewall",
+    category: "Security, Identity, and Compliance",
+    description: "Managed network firewall service. Deploys essential network protections for your Amazon VPCs at scale."
+  },
+  {
+    id: 137,
+    service: "AWS Resource Access Manager",
+    category: "Security, Identity, and Compliance",
+    description: "Resource sharing service. Makes it easy to share your AWS resources with any AWS account or through AWS Organizations."
+  },
+  {
+    id: 138,
+    service: "AWS Secrets Manager",
+    category: "Security, Identity, and Compliance",
+    description: "Secrets management service. Helps you protect the secrets needed to access your applications, services, and IT resources."
+  },
+  {
+    id: 139,
+    service: "AWS Security Hub",
+    category: "Security, Identity, and Compliance",
+    description: "Security findings aggregation service. Provides a comprehensive view of your high-priority security alerts and compliance status across AWS accounts."
+  },
+  {
+    id: 140,
+    service: "AWS IAM Identity Center",
+    category: "Security, Identity, and Compliance",
+    description: "Cloud SSO service. Makes it easy to centrally manage access to multiple AWS accounts and business applications."
+  },
+  {
+    id: 141,
+    service: "AWS WAF Captcha",
+    category: "Security, Identity, and Compliance",
+    description: "Bot mitigation service. Adds CAPTCHA challenges to your web applications to help block unwanted bot traffic."
+  },
+  {
+    id: 142,
+    service: "Amazon Security Lake",
+    category: "Security, Identity, and Compliance",
+    description: "Security data lake service. Automatically centralizes security data from cloud, on-premises, and custom sources into a purpose-built data lake stored in your account."
+  },
+  {
+    id: 143,
+    service: "Amazon Verified Permissions",
+    category: "Security, Identity, and Compliance",
+    description: "Fine-grained authorization service. Provides a scalable permissions management system for applications, supporting ABAC and RBAC models."
+  },
+  {
+    id: 144,
+    service: "AWS Audit Manager",
+    category: "Security, Identity, and Compliance",
+    description: "Audit management service. Helps you continuously audit your AWS usage to simplify how you assess risk and compliance with regulations and industry standards."
+  },
+  {
+    id: 145,
+    service: "AWS Firewall Manager",
+    category: "Security, Identity, and Compliance",
+    description: "Security management service. Centrally configures and manages firewall rules across your accounts and applications in AWS Organizations."
   }
 ];
 
