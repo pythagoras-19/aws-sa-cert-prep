@@ -20,13 +20,13 @@ const awsServices = [
   {
     id: 18,
     service: "ECS (Elastic Container Service)",
-    category: "Compute",
+    category: "Containers",
     description: "Fully managed container orchestration service. Supports Docker containers and allows you to easily run and scale containerized applications on AWS."
   },
   {
     id: 19,
     service: "EKS (Elastic Kubernetes Service)",
-    category: "Compute",
+    category: "Containers",
     description: "Fully managed Kubernetes service. Makes it easy to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane."
   },
   {
@@ -1180,6 +1180,26 @@ const awsServices = [
     service: "AWS Firewall Manager",
     category: "Security, Identity, and Compliance",
     description: "Security management service. Centrally configures and manages firewall rules across your accounts and applications in AWS Organizations."
+  },
+  
+  // Container Services
+  {
+    id: 146,
+    service: "Elastic Container Registry",
+    category: "Containers",
+    description: "Fully managed Docker container registry. Makes it easy for developers to store, manage, and deploy Docker container images."
+  },
+  {
+    id: 147,
+    service: "App2Container",
+    category: "Containers",
+    description: "Containerization service. Helps you migrate and modernize your .NET and Java applications into containers."
+  },
+  {
+    id: 148,
+    service: "Red Hat OpenShift Service on AWS",
+    category: "Containers",
+    description: "Managed OpenShift service. Provides a fully managed Red Hat OpenShift service on AWS, making it easy to run containerized applications."
   }
 ];
 
